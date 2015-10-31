@@ -12,7 +12,7 @@ In this lab, we'll be dealing with a `Song` class. The `Song` class can produce 
 ```ruby
 Song.count
   => 30
-``
+```
 
 We need our `Song` class to be able to show us all of the artists of existing songs:
 
