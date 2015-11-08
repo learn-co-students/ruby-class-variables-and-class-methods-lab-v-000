@@ -8,47 +8,48 @@ class Song
   def initialize(name,artist,genre)
     @name = name
     @artist = artist
-    @song = song
+    @genre = genre
     @@count += 1
     @@genres << genre
     @@artists << artist
-
   end
 
-  def new(name,artist,genre)
+  def self.name
+    @@name
   end
 
-  def count
+  def self.count
     @@count
   end
 
-  def genres
+  def self.genres
     @@genres.uniq
   end
 
-  def artists
-    @@artists.uniq
+  def self.artists
+    @@artists.uniq 
   end
 
-  def genre_count
+  def self.genre_count
     genre_hash = {}
-    @@genre.each do |genre|
+    @@genres.each do |genre|
       if genre_hash[genre]
         genre_hash[genre] +=1
       else
         genre_hash[genre] = 1
+      end
     end
       genre_hash
     end
-  end
 
-  def artist_count
+  def self.artist_count
     artist_hash = {}
-    @@artist_hash.each do |artist|
+    @@artists.each do |artist|
       if artist_hash[artist]
         artist_hash[artist] +=1
       else
         artist_hash[artist] = 1
+      end
     end
     artist_hash
   end
