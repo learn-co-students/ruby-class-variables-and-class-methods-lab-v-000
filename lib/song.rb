@@ -6,8 +6,8 @@ class Song
   @@count = 0
   @@genres = []
   @@artists = []
-  @@genre_count_hash = {}
-  @@artist_count_hash = {}
+  #@@genre_count_hash = {}
+  #@@artist_count_hash = {}
 
   def initialize(name, artist, genre)
     @name = name
@@ -16,8 +16,8 @@ class Song
     @@count += 1
     @@genres << genre
     @@artists << artist
-    @@genre_count_hash[name] = genre
-    @@artist_count_hash[name] = artist
+#    @@genre_count_hash[name] = genre
+#    @@artist_count_hash[name] = artist
     end
 
   def self.count
@@ -42,11 +42,19 @@ class Song
   end
 
   def self.artist_count
-    final = {}
-    @@artist_count_hash.each do |k_and_v| 
-      final[k_and_v[1]] ||= []
-      final[k_and_v[1]] << 1
+    final = Hash.new(0)
+    @@artist.each do |name|
+      final[name] += 1
     end
-    final.each{|key,val| final[key] = val.length}
   end
 end
+
+# def self.artist_count
+#    final = {}
+#    @@artist_count_hash.each do |k_and_v| 
+#      final[k_and_v[1]] ||= []
+#      final[k_and_v[1]] << 1
+#    end
+#    final.each{|key,val| final[key] = val.length}
+#  end
+#end
