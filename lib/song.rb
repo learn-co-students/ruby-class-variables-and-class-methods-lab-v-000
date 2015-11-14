@@ -33,19 +33,28 @@ class Song
   end
 
   def self.genre_count
-    final = {}
-    @@genre_count_hash.each do |k_and_v| 
-      final[k_and_v[1]] ||= []
-      final[k_and_v[1]] << 1
+    final = Hash.new(0)
+    @@genres.each do |name|
+      final[name] += 1
     end
-    final.each{|key,val| final[key] = val.length}
+    final
   end
+
+#  def self.genre_count
+#    final = {}
+#    @@genre_count_hash.each do |k_and_v| 
+#      final[k_and_v[1]] ||= []
+#      final[k_and_v[1]] << 1
+#    end
+#    final.each{|key,val| final[key] = val.length}
+#  end
 
   def self.artist_count
     final = Hash.new(0)
-    @@artist.each do |name|
+    @@artists.each do |name|
       final[name] += 1
     end
+    final
   end
 end
 
