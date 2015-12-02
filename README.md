@@ -72,7 +72,7 @@ We'll accomplish this with the use of class variables and methods.
 * Create a class variable, `@@count`. We will use this variable to keep track of the number of new songs that are created from the `Song` class. Set this variable equal to `0`.
 * At what point should we increment our `@@count` of songs? Whenever a new song is created. Your `#initialize` method should use the `@@count` variable and increment the value of that variable by `1`. 
 * Write a class method, `#count`, that returns the total number of songs created. 
-* Write a class method, `#genres` that returns an array of all of the genres of existing songs. This array should contain only unique genres––no duplicates! This about what you'll need to do to get this method working. 
+* Write a class method, `#genres` that returns an array of all of the genres of existing songs. This array should contain only unique genres––no duplicates! Think about what you'll need to do to get this method working. 
   * You'll need a class variable, let's call it `@@genres`, that is equal to an empty array. 
   * When should you add genres to the array? Whenever a new song is created. Your `#initialize` method should add the genre of the song being created to the `@@genres` array. All genres should be added to the array. Control for duplicates when you code your `#genres` class method, not when you add genres to the original `@@genres` array. We will want to know how many songs of each genre have been created. We'll revisit that job a little later on. 
 * Write a class method, `#artists`, that returns an array of all of the artists of the existing songs. This array should only contain unique artists––no repeats! Once again think about what you need to do to implement this behavior.
