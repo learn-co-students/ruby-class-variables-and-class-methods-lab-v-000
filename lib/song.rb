@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
 
   attr_reader :name, :artist, :genre
@@ -5,20 +7,14 @@ class Song
   @@count = 0
   @@artists = []
   @@genres = []
-  @@genre_count = {}
-  @@artist_count = {}
 
   def initialize(track, artist, genre)
     @name = track
     @artist = artist
     @genre = genre
     @@count += 1
-    @@artists << artist if !@@artists.include?(artist)
-    @@genres << genre if !@@genres.include?(genre)
-    @@genre_count[genre] ||= 0
-    @@genre_count[genre] += 1 
-    @@artist_count[artist] ||= 0
-    @@artist_count[artist] += 1  
+    @@artists << artist
+    @@genres << genre
   end
 
   def self.count
@@ -26,27 +22,27 @@ class Song
   end
 
   def self.artists
-    @@artists
+    @@artists.uniq
   end
 
   def self.genres
-    @@genres
+    @@genres.uniq
   end
 
   def self.genre_count
-    @@genre_count
+    genre_count = {}
+    self.genres.each do |genre|
+      genre_count[genre] = @@genres.count(genre)
+    end
+    genre_count
   end
 
   def self.artist_count
-    @@artist_count
+    artist_count = {}
+    self.artists.each do |artist|
+      artist_count[artist] = @@artists.count(artist)
+    end
+    artist_count
   end
 
 end
-
-Song.new("99 Problems", "Jay-Z", "rap")
-Song.new("XO", "Beyonce", "RnB")
-Song.new("DooWop", "Lauryn Hill", "RnB")
-puts Song.count
-puts Song.genres
-puts Song.genre_count
-puts Song.artist_count
