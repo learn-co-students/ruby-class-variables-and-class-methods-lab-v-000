@@ -5,7 +5,6 @@ class Song
   @@count = 0
   @@artists = []
   @@genres = []
-  @@total_count = {}
 
   def initialize(name, artist, genre)
     @name, @artist, @genre = name, artist, genre
