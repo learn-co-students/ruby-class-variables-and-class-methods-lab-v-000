@@ -21,8 +21,7 @@ describe "Song" do
     it "has a name" do 
       expect(hit_me.name).to eq("hit me baby one more time")
     end
-  end
-
+  end 
   describe "#artist" do 
     it "has an artist" do 
       expect(hit_me.artist).to eq("Brittany Spears")
