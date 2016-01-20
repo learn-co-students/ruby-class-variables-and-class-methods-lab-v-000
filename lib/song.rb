@@ -26,12 +26,9 @@ class Song
   end
 
   def self.genre_count
-    #the argument passed to .inject in this case is an empty hash.
-    #the {} becomes the starting place for .inject
-    #broken down, this method looks like this: 
-      #[rap, rap, pop].uniq.inject({}) { |genre, count| }
-    @@genres.uniq.inject({}) do |genre, count|
-      genre[count] = @@genres.count(count); genre
+    genre_count = Hash.new(0)
+    @@genres.each do |genre|
+      genre_count[genre] += 1
     end
   end
 
