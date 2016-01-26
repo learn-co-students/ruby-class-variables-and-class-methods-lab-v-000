@@ -9,8 +9,8 @@ class Song
     @artist = artist
     @genre = genre
     @@count += 1
-    @@genres.push(genre)
-    @@artists.push(artist)
+    @@genres << genre
+    @@artists << artist
   end
 
   def self.count
@@ -21,35 +21,24 @@ class Song
     @@genres.uniq
   end
 
-
   def self.artists
     @@artists.uniq
   end
 
   def self.genre_count
-    genre_hash = Hash.new(0)
+    genre_count = {}
     @@genres.each do |genre|
-      genre_hash[genre] += 1
+      genre_count.has_key?(genre) ? genre_count[genre] += 1 : genre_count[genre] = 1
     end
-    genre_hash
+    genre_count
   end
 
- def self.artist_count
-    artist_hash = Hash.new(0)
-   @@artists.each do |artist|
-     artist_hash[artist] += 1
-   end
-    artist_hash
+  def self.artist_count
+    artist_count={}
+    @@artists.each do |artist|
+      artist_count.has_key?(artist)? artist_count[artist] += 1 : artist_count[artist] =1
+     end
+     artist_count
   end
-
-
-
-
-
-
-
-
-
-
-
 end
+
