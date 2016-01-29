@@ -90,4 +90,4 @@ This manner of displaying numerical data is called a [histogram](https://en.wiki
 * Write a class method, `#artist_count`, that returns a histogram similar to the one above, but for artists rather than genres. 
 
 
-<a href='https://learn.co/lessons/ruby-class-variables-and-class-methods-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-class-variables-and-class-methods-lab' title='Ruby Class Variables And Class Methods Lab'>Ruby Class Variables And Class Methods Lab</a> on Learn.co and start learning to code for free.</p>
