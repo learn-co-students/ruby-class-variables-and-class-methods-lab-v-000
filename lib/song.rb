@@ -2,15 +2,25 @@ class Song
 
   ### ATTR ###
 
-  attr_accessor :song, :artist, :genre
+  attr_accessor :name, :artist, :genre
 
   ### CLASS VARIABLES ###
 
   @@count = 0
   @@genres = []
   @@artists = []
-  @@genre_count
-  @@artist_count
+
+  ### INITIALIZE METHOD ###
+
+  def initialize(name, artist, genre)
+    @name = name
+    @artist = artist
+    @genre = genre
+    
+    @@count += 1
+    @@artists << artist
+    @@genres << genre
+  end
 
   ### CLASS METHODS ###
 
@@ -32,7 +42,7 @@ class Song
       if count.include?(genre)
         count[genre] += 1
       else
-        count.merge!(genre => 1)
+        count[genre] = 1
       end
     end
     count
@@ -44,28 +54,9 @@ class Song
       if count.include?(artist)
         count[artist] += 1
       else
-        count.merge!(artist => 1)
+        count[artist] = 1
       end
     end
     count
   end
-
-  ### INITIALIZE METHOD ###
-
-  def initialize(name, artist, genre)
-    @name = name
-    @artist = artist
-    @genre = genre
-    
-    @@count += 1
-    @@artists << artist
-    @@genres << genre
-  end
-
-  ### INSTANCE METHODS ###
-
-  def name
-    @name
-  end
-
 end
