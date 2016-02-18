@@ -38,6 +38,8 @@ class Song
     genre_count
   end
 
+  # {"rap" => 3, "pop" => 2}
+
   def self.artist_count
     artist_count = {}
     @@artists.each do |artist|
