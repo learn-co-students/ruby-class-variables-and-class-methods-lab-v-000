@@ -28,15 +28,19 @@ class Song
   end
 
   def self.genre_count
-    frequencies = Hash.new(0)
-      @@genres.each {|count| frequencies[count] ++1}
-      frequencies = frequencies.sort_by do |genres, count|
-      count.to_h
-      end
+  frequencies = Hash.new(0)
+  @@genres.each do |genre|
+    frequencies[genre] += 1
   end
+  frequencies
+end
 
   def self.artist_count
-    #same as above histogram but for artists
+    artists_frequency = Hash.new(0)
+  @@artists.each do |artist|
+    artists_frequency[artist] += 1
+  end
+  artists_frequency
   end
 
 end
