@@ -8,6 +8,9 @@ class Song
  
   def initialize(name, artist, genre)
     @@count += 1
+    @name = name
+    @artist = artist
+    @genre = genre
     @@artists << artist
     @@genres << genre
   end
@@ -25,11 +28,11 @@ class Song
   end
 
   def self.genre_count
-    #make a histogram
-    #iterate over the @@genres array and populate a hash the key/value pairs. 
-    #check to see if the hash already contains a key of a particular genre. 
-    #If so, increment the value of that key by one, 
-    #otherwise, create a new key/value pair.
+    frequencies = Hash.new(0)
+      @@genres.each {|count| frequencies[count] ++1}
+      frequencies = frequencies.sort_by do |genres, count|
+      count.to_h
+      end
   end
 
   def self.artist_count
