@@ -35,13 +35,13 @@ class Song
     end
     g_hash
   end
-  
+
   def self.artist_count
-    g_hash = Hash.new(0)
+    a_hash = Hash.new(0)
     @@artists.each do |x|
-      g_hash[x] +=1
+      a_hash[x] +=1
     end
-    g_hash
+    a_hash
   end
 
 end
