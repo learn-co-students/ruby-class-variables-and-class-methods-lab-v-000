@@ -31,7 +31,7 @@ class Song
   def self.genre_count
      genre_count = Hash.new(0) #set empty hash with default values of 0 in k/v pairs
      @@genres.each do |genre| #iterate through @@genres array
-         genre_count[genre] += 1 #increment and set genre_count key of [genre] by 1
+         genre_count[genre] += 1 #increment and set genre_count key of [genre] by 1, checks for duplicates
        end
      genre_count
    end
