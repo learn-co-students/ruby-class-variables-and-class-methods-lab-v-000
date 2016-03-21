@@ -39,8 +39,8 @@ class Song
    #The challenging part of this lab is checking for duplicate genres and artists.
    #In the above, I don't need to set a counter = 0, I simply have to set increment genre_count hash
    #In the end, this acts as a counter in itself. It accounts for duplicates on the spot -
-   #If [genre] already exists in the hash, then increment it by 1,
-   #If it does not, then it will set it equal to 1.
+   #If [genre] already exists in the hash, then increment it by 1, (Line 34)
+   #If it does not, then it will set it equal to 1. (Line 34)
    #Repeat.
 
   def self.artist_count
