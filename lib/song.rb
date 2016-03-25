@@ -3,8 +3,8 @@ class Song
   @@count = 0	
   @@artists = []
   @@genres = []
-  @@genre_count = {}
-  @@artist_count = {}
+  @@genre_count = Hash.new(0)
+  @@artist_count = Hash.new(0)
 
   attr_accessor :name, :artist, :genre
 
@@ -32,23 +32,16 @@ class Song
   end
 
   def self.genre_count
-    @@genres.each do |genre|
-      if !@@genre_count.keys.include?(genre)
-      	@@genre_count[genre] = 1
-      elsif @@genre_count.keys.include?(genre)
-      	@@genre_count[genre] += 1
-      end
-    end
-    @@genre_count
+    
+     @@genres.each do |genre|
+       @@genre_count[genre] += 1
+     end
+     @@genre_count
   end 
 
   def self.artist_count
   	@@artists.each do |artist|
-  	  if !@@artist_count.keys.include?(artist)
-  	  	@@artist_count[artist] = 1
-  	  elsif @@artist_count.keys.include?(artist)
-  	  	@@artist_count[artist] += 1
-  	  end
+  	  @@artist_count[artist] += 1
   	end
   	@@artist_count
   end
