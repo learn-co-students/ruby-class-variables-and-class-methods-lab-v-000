@@ -42,7 +42,7 @@ Should return something like this;
 {"rap" => 5, "rock" => 1, "country" => 3}
 ```
 
-Lastly, want our `Song` class to reveal to us the number of songs each artist is responsible for. 
+Lastly, we want our `Song` class to reveal to us the number of songs each artist is responsible for. 
 
 ```ruby
 Song.artist_count
@@ -91,3 +91,5 @@ This manner of displaying numerical data is called a [histogram](https://en.wiki
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-class-variables-and-class-methods-lab' title='Ruby Class Variables And Class Methods Lab'>Ruby Class Variables And Class Methods Lab</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-class-variables-and-class-methods-lab'>Class Variables and Methods Lab</a> on Learn.co and start learning to code for free.</p>
