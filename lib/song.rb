@@ -3,7 +3,7 @@
 class Song
   attr_accessor :name, :artist, :genre
 
-  @@count = 1
+  @@count = 0
   @@genres = []
   @@artists = []
 
@@ -26,13 +26,7 @@ class Song
 
   def self.genres
     # Iterate through @@genres and report all unique (non duplicate) genres
-    # ####
-    # unique_genres = []
-    # @@genres.each do |genre|
-    #   unique_genres << genre unless unique_genres.include?(genre)
-    # end
-    # unique_genres
-    # #uniq does this for me:
+    # #uniq does this nicely:
     @@genres.uniq
   end
 
