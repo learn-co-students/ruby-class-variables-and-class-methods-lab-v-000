@@ -8,8 +8,6 @@ class Song
 @@genres = []
 @@artists = []
 
-@@artists_hash = {}
-
 attr_accessor :name, :artist, :genre
 
 def initialize(name, artist, genre)
