@@ -11,7 +11,7 @@ In this lab, we'll be dealing with a `Song` class. The `Song` class can produce 
 
 ```ruby
 Song.count
-  => 30
+  # => 30
 ```
 
 We need our `Song` class to be able to show us all of the artists of existing songs:
@@ -93,3 +93,5 @@ This manner of displaying numerical data is called a [histogram](https://en.wiki
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-class-variables-and-class-methods-lab' title='Ruby Class Variables And Class Methods Lab'>Ruby Class Variables And Class Methods Lab</a> on Learn.co and start learning to code for free.</p>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ruby-class-variables-and-class-methods-lab'>Class Variables and Methods Lab</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/ruby-class-variables-and-class-methods-lab'>Class Variables and Methods Lab</a> on Learn.co and start learning to code for free.</p>
