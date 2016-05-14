@@ -34,7 +34,27 @@ class Song
 	end
 	
 	def self.genre_count
-		hash = Hash[@genres_list.collect { |x| [x, ""] } ]
+		hash = {}
+		@@genres.each do |x|
+			if hash[x]
+				hash[x]+= 1
+			else
+				hash[x] = 1
+			end
+		end		
+		hash		
+	end
+	
+	def self.artist_count
+		hash = {}
+		@@artists.each do |x|
+			if hash[x]
+				hash[x]+= 1
+			else
+				hash[x] = 1
+			end
+		end		
+		hash		
 	end
 
 end
