@@ -56,5 +56,13 @@ class Song
 		end		
 		hash		
 	end
+	
+	#def self.artist_count
+	#	artist_hash = {}
+	#	@@artists.each do |artist_name|
+	#		artist_hash[artist_name] = @@artists.count(artist_name) unless artist_hash[artist_name]
+	#	end
+	#	artist_hash
+	#end
 
 end
