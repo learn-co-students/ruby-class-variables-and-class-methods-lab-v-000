@@ -25,11 +25,11 @@ class Song
   end
 
   def self.genre_count
-    histogram = {}
+    genre_hash = {}
     @@genres.each do |item|
-      histogram[item] = (histogram[item] || 0) +1
+      genre_hash[item] = (genre_hash[item] || 0) +1
     end
-    histogram
+    genre_hash
   end
 
   def self.artist_count
