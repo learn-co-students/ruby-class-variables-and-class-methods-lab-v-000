@@ -41,7 +41,17 @@ class Song
     genre_array = @@genres
     genre_array.each do |name|
       value = genre_array.count(name)
-      newhash.has_key?(name) ? name : newhash= {name => value}
+      newhash.has_key?(name) ? name : newhash[name] = value
+    end
+    newhash
+  end
+
+  def self.artist_count
+    newhash = {}
+    artist_array = @@artists
+    artist_array.each do |name|
+      value = artist_array.count(name)
+      newhash.has_key?(name) ? name : newhash[name] = value
     end
     newhash
   end
