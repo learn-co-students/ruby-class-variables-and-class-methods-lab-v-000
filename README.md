@@ -18,14 +18,14 @@ We need our `Song` class to be able to show us all of the artists of existing so
 
 ```ruby
 Song.artists
-  => ["Jay-Z", "Drake", "Beyonce"]
+  # => ["Jay-Z", "Drake", "Beyonce"]
 ```
 
 We need our `Song` class to be able to show us all of the genres of existing songs:
 
 ```ruby
 Song.genres
-  => ["Rap", "Pop"]
+  # => ["Rap", "Pop"]
 ```
 
 We also need our `Song` class to be able to keep track of the number of songs of each genre it creates. 
@@ -46,7 +46,7 @@ Lastly, we want our `Song` class to reveal to us the number of songs each artist
 
 ```ruby
 Song.artist_count
-  => {"Beyonce" => 17, "Jay-Z" => 40}
+  # => {"Beyonce" => 17, "Jay-Z" => 40}
 ``` 
 
 We'll accomplish this with the use of class variables and methods. 
@@ -57,16 +57,16 @@ We'll accomplish this with the use of class variables and methods.
 * There should be an `attr_accessor` for those three attributes. 
 
 ```ruby
-99_problems = Song.new("99 Problems", "Jay-Z", "rap")
+ninety_nine_problems = Song.new("99 Problems", "Jay-Z", "rap")
 
-99_problems.name
-  => "99 Problems"
+ninety_nine_problems.name
+  # => "99 Problems"
 
-99_problems.artist
-  => "Jay-Z"
+ninety_nine_problems.artist
+  # => "Jay-Z"
 
-99_problems.genre
-  => "rap"
+ninety_nine_problems.genre
+  # => "rap"
 ```
 
 * Create a class variable, `@@count`. We will use this variable to keep track of the number of new songs that are created from the `Song` class. Set this variable equal to `0`.
@@ -82,7 +82,7 @@ We'll accomplish this with the use of class variables and methods.
 
 ```ruby
 Song.genre_count
-  => {"rap" => 5, "rock" => 1, "country" => 3}
+  # => {"rap" => 5, "rock" => 1, "country" => 3}
 ```
 
 This manner of displaying numerical data is called a [histogram](https://en.wikipedia.org/wiki/Histogram). How will you create your histogram? You will need to iterate over the `@@genres` array and populate a hash the key/value pairs. You will need to check to see if the hash already contains a key of a particular genre. If so, increment the value of that key by one, otherwise, create a new key/value pair.
