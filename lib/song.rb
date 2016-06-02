@@ -16,6 +16,12 @@ class Song
     @@count += 1
     @@genres << self.genre
     @@artists << self.artist
+
+    if @@genre_count.has_key?(genre)
+      genre_tally = @@genres.count(genre)
+      @@genre_count.store(genre, genre_tally)
+    else
+      @@genre_count.store(genre, 1)
   end
 
   def count
