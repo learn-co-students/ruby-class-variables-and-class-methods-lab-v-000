@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
 @@count = 0
 @@genres = []
@@ -39,23 +41,50 @@ attr_accessor :name, :artist, :genre
   end
 
   def self.genre_count
-    genre_hash ||= {}
+    genre_hash = Hash.new(0)
 
     @@genres.each do |genre_name|
-      genre_hash.each do |key, value|
-        if key == genre_name
-          value +=1
-        else
-          genre_hash = {genre_name => 0}
+      if genre_hash.has_key?(genre_name) == false
+
+          genre_hash[genre_name] = 1
+
+      elsif genre_hash.has_key?(genre_name) == true
+
+       genre_hash.each do |key, value|
+
+          if key == genre_name
+
+             value +=1
+             genre_hash[genre_name] = value
+           end
         end
-
       end
-
     end
-    return genre_hash
+genre_hash
   end
 
+
   def self.artist_count
+    artist_hash = Hash.new(0)
+
+    @@artists.each do |artist_name|
+      if artist_hash.has_key?(artist_name) == false
+
+          artist_hash[artist_name] = 1
+
+      elsif artist_hash.has_key?(artist_name) == true
+
+       artist_hash.each do |key, value|
+
+          if key == artist_name
+
+             value +=1
+             artist_hash[artist_name] = value
+           end
+        end
+      end
+    end
+artist_hash
 
   end
 
