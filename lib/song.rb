@@ -29,12 +29,9 @@ class Song
 
   def self.genre_count
     genre_count = {}
+
     @@genres.each do |category|
-      if genre_count.has_key?(category)
-        genre_count[category] += 1
-      else
-        genre_count[category] = 1
-      end
+      genre_count.has_key?(category) ? genre_count[category] += 1 : genre_count[category] = 1
     end
 
     genre_count
@@ -44,12 +41,9 @@ class Song
 
   def self.artist_count
     artist_count = {}
+
     @@artists.each do |singer|
-      if artist_count.has_key?(singer)
-        artist_count[singer] += 1
-      else
-        artist_count[singer] = 1
-      end
+      artist_count.has_key?(singer) ? artist_count[singer] += 1 : artist_count[singer] = 1
     end
 
     artist_count
