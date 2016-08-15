@@ -39,8 +39,8 @@ class Song
   end
 
   def self.artist_count
-    @@artists_full.each do |key,value|
-      @@artists_full[key] = @@genres.uniq.count
+    @@artists.uniq.each do |value|
+      @@artists_full[value] =  @@artists.count{|x| x if x == value}
     end
     @@artists_full
   end
@@ -50,9 +50,8 @@ class Song
   end
 
   def self.genre_count
-    @@genres.each do |value|
-      @@genres_full[value] = @@genres.uniq.count unless @@genres_full.include?(value)
-
+    @@genres.uniq.each do |value|
+      @@genres_full[value] = @@genres.count{|x| x if x == value}
     end
     @@genres_full
   end
