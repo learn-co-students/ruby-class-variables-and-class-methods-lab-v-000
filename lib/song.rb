@@ -1,3 +1,4 @@
+require 'pry'
 class Song
 
   attr_reader :name, :artist, :genre
@@ -40,7 +41,7 @@ class Song
   def self.artist_count
     songs_by_artist = Hash.new(0)
     @@artists.each do |songs|
-      songs_by_artist[songs]+=1
+      songs_by_artist[songs]+=1 unless !@@artists.include?(songs) || songs.nil?
     end
     songs_by_artist
   end
