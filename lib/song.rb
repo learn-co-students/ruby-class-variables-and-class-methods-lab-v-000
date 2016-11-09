@@ -8,8 +8,8 @@ class Song
     @name = name
     @artist = artist
     @genre = genre
-    @@artists << @artist unless @@artists.include?(@artist)
-    @@genres << @genre unless @@genres.include?(@genre)
+    @@artists << @artist
+    @@genres << @genre
   end
   def name
     @name
@@ -25,13 +25,14 @@ class Song
   end
 
   def self.genres
-    @@genres
-  end
-  def self.genre_count
-    @@genres.each_with_object(Hash.new(0)) { |genre,counts| counts[genre] += 1 }
+    @@genres = @@genres.uniq
   end
   def self.artists
-    @@artists
+    @@artists = @@artists.uniq
+  end
+
+  def self.genre_count
+    @@genres.each_with_object(Hash.new(0)) { |genre,counts| counts[genre] += 1 }
   end
   def self.artist_count
     @@artists.each_with_object(Hash.new(0)) { |artist,counts| counts[artist] += 1 }
