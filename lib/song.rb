@@ -1,41 +1,80 @@
+# class Song
+#   attr_accessor :name, :artist, :genre
+#
+#   @@count = 0
+#   @@artists = {}
+#   @@genres = {}
+#
+#   def initialize(name, artist, genre)
+#     @@count += 1
+#     @name = name
+#     @artist = artist
+#     @genre = genre
+#     @@artists.has_key?(artist) ? @@artists[artist] += 1 : @@artists[artist] = 1
+#     @@genres.has_key?(genre) ? @@genres[genre] += 1 : @@genres[genre] = 1
+#   end
+#
+#   def self.count
+#     @@count
+#   end
+#
+#   def self.artists
+#     @@artists.keys
+#   end
+#
+#   def self.genres
+#     @@genres.keys
+#   end
+#
+#   def self.genre_count
+#     @@genres
+#   end
+#
+#   def self.artist_count
+#     @@artists
+#   end
+#
+# end
+
+
 class Song
   attr_accessor :name, :artist, :genre
 
   @@count = 0
-  @@artists = {}
-  @@genres = {}
+  @@artists = []
+  @@genres = []
 
-  def initialize(name, artist, genre)
+  def initialize(name,artist,genre)
     @@count += 1
     @name = name
     @artist = artist
     @genre = genre
-    @@artists[artist] += 1
-    @@genres[genre] += 1
+    @@genres << genre
+    @@artists << artist
   end
 
-  def count
+  def self.count
     @@count
   end
 
-  def artists
-    @@artists.keys
+  def self.artists
+    @@artists.uniq
   end
 
-  def genres
-    @@genres.keys
+  def self.genres
+    @@genres.uniq
   end
 
-  def genre_count
-    @@genres
+  def self.artist_count
+    art_hsh = {}
+    @@artists.each{|x| art_hsh.has_key?(x) ? art_hsh[x] += 1 : art_hsh[x] = 1}
+    art_hsh
   end
 
-  def artist_count
-    @@artists
+  def self.genre_count
+    genre_hsh = {}
+    @@genres.each{|x| genre_hsh.has_key?(x) ? genre_hsh[x] += 1 : genre_hsh[x] = 1}
+    genre_hsh
   end
 
 end
-
-new_song = Song.new("a","b","c")
-puts Song.artists
-puts Song.artists_count
