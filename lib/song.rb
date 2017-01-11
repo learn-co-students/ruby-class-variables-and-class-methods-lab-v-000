@@ -38,7 +38,7 @@
 
 
 class Song
-  attr_accessor :name, :artist, :genre
+  attr_reader :name, :artist, :genre
 
   @@count = 0
   @@artists = []
@@ -76,5 +76,4 @@ class Song
     @@genres.each{|x| genre_hsh.has_key?(x) ? genre_hsh[x] += 1 : genre_hsh[x] = 1}
     genre_hsh
   end
-
 end
