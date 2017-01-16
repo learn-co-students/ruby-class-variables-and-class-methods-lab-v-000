@@ -35,7 +35,6 @@ class Song
   def self.artist_count
     # => {"Beyonce" => 17, "Jay-Z" => 40}
     artists = {}
-
     @@artists.each {|k| artists.key?(k) ? artists[k] += 1 : artists[k] = 1 }
     artists
   end
