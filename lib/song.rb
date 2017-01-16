@@ -28,7 +28,6 @@ class Song
   def self.genre_count
     # => {"rap" => 5, "rock" => 1, "country" => 3}
     genres = {}
-
     @@genres.each {|k| genres.key?(k) ? genres[k] += 1 : genres[k] = 1 }
     genres
 
