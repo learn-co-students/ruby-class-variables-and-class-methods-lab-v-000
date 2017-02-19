@@ -4,8 +4,6 @@ class Song
   @@count = 0
   @@artists = []
   @@genres = []
-  @@genre_count = {}
-  @@artist_count = {}
 
 
   def initialize(name, artist, genre)
@@ -30,7 +28,16 @@ class Song
   end
 
   def self.genre_count
-    Hash[*@@genres.group_by{|genre| genre }.flat_map{ |genre_key, genre_count| [genre_key, genre_count.size]}]
+    # Hash[*@@genres.group_by{|genre| genre }.flat_map{ |genre_key, genre_count| [genre_key, genre_count.size]}]
+    genre_count = {}
+    @@genres.each do |genre|
+      if genre_count[genre]
+        genre_count[genre] += 1
+      else
+        genre_count[genre] = 1
+      end
+    end
+    genre_count
   end
 
   def self.artist_count
