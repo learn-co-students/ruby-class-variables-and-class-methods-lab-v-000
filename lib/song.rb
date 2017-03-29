@@ -1,10 +1,10 @@
 class Song
 
-  attr_accessor :name, :artist, :genre
-
   @@count = 0
   @@artists = []
   @@genres = []
+
+  attr_accessor :name, :artist, :genre
 
   def initialize(name, artist, genre)
     @name = name
@@ -22,6 +22,11 @@ class Song
   def self.artists
     @@artists.uniq
   end
+
+  # Make a hash to store artists and their song count
+  # If the song's artist is in the hash, add another to their song count
+  # If the song's artist is not in the hash, add artist and "1" as their song count
+  # Call the hash to return the results
 
   def self.artist_count
     artist_count = {}
