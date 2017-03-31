@@ -27,23 +27,15 @@ class Song
 
   def self.genre_count
     arr={}
-    self.genres.each{|x|
-      arr[x]=0
-    }
-    @@genres.each{|x|
-      arr[x] += 1
-    }
+    self.genres.each{|x| arr[x]=0 }
+    @@genres.each{|x| arr[x] += 1 }
     arr
   end
 
   def self.artist_count
     arr={}
-    self.artists.each{|x|
-      arr[x]=0
-    }
-    @@artists.each{|x|
-      arr[x] += 1
-    }
+    self.artists.each{|x| arr[x]=0}
+    @@artists.each{|x| arr[x] += 1}
     arr
   end
 end
