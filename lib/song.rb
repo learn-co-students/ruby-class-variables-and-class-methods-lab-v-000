@@ -22,8 +22,16 @@ class Song
     @@genres.uniq
   end
 
+  def self.genre_count
+    @@genres.map {|g| {g => frequences[g]}}
+  end
+
   def self.artists
     @@artists.uniq
+  end
+
+  def self.artist_count
+
   end
 
 end
