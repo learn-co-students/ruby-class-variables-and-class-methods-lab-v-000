@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
   attr_accessor :name, :artist, :genre
 
@@ -23,7 +25,12 @@ class Song
   end
 
   def self.genre_count
-    @@genres.map {|g| {g => frequences[g]}}
+    @genre_count = {}
+    @@genres.each do |g|
+      counter = @@genres.count(g)
+      @genre_count[g] = counter
+    end
+    @genre_count
   end
 
   def self.artists
@@ -31,7 +38,12 @@ class Song
   end
 
   def self.artist_count
-
+    @artist_count = {}
+    @@artists.each do |a|
+      counter = @@artists.count(a)
+      @artist_count[a] = counter
+    end
+    @artist_count
   end
 
 end
