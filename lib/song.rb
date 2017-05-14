@@ -13,7 +13,7 @@ class Song
       @genre=genre
       @@genres << genre
       @@artists << artist
-      binding.pry
+
       end
 
       def self.count
@@ -28,28 +28,29 @@ class Song
       def self.genres
         @@genres = @@genres.uniq
       end
-      binding.pry
-      #You will need to iterate over the @@genres array and populate a hash with the
-        #key/value pairs. You will need to check to see if the hash already contains a
-        # key of a particular genre. If so, increment the value of that key by one, otherwise, create
-        # a new key/value pair.
-      def self.genre_count
-        new_hash={}
 
-        @@genres.each do |key|
-        #Next step--check to see if hash contains the key
-
-
-
-        end
-
+        def self.genre_count
+    genre_count = {}
+    @@genres.each do |genre|
+      if genre_count[genre]
+        genre_count[genre] += 1
+      else
+        genre_count[genre] = 1
       end
-      #What I think I'm doing here is making a hash and populating it with keys of genre names and values of the
-        #length of each genre. I may have to iterate through genres to get the lengths of each genre for key values
-
+    end
+    genre_count
   end
 
- #You need to walk through some test code step
-    # by step to make sure you get what's
-    # going on
-  #Be more specific when asking questions on Learn to get more accurate help
+  def self.artist_count
+    artist_count = {}
+    @@artists.each do |artist|
+      if artist_count[artist]
+        artist_count[artist] += 1
+      else
+        artist_count[artist] = 1
+      end
+    end
+    artist_count
+  end
+
+  end
