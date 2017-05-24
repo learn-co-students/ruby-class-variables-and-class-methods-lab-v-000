@@ -35,7 +35,7 @@ class Song
         #return hash w/ keys = names of each genre, 
         #values = count of songs in genre
         @@genres.each{ |genre|
-            if @@genre_count.has_key?(genre)
+            if @@genre_count[genre]
                 @@genre_count[genre] += 1
             else
                 @@genre_count[genre] = 1
