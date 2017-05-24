@@ -48,7 +48,7 @@ class Song
         #return hash w/ keys = names of each artist, 
         #values = count of songs by each artist
         @@artists.each{ |artist|
-            if @@artist_count.has_key?(artist)
+            if @@artist_count[artist]
                 @@artist_count[artist] += 1
             else
                 @@artist_count[artist] = 1
