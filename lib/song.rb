@@ -4,6 +4,7 @@ class Song
   @@count = 0
   @@genres = []
   @@artists = []
+  @@all = []
 
   def initialize(name, artist, genre)
     @@count += 1
@@ -12,10 +13,15 @@ class Song
     @genre = genre
     @@artists << @artist
     @@genres << @genre
+    @@all.push(self)
   end
 
   def self.count
     @@count
+  end
+
+  def self.all
+    @@all
   end
 
   def self.genres
@@ -27,18 +33,24 @@ class Song
   end
 
   def self.genre_count
-    genre_count = {}
-    @@genres.each_pair do |genre, song|
-      genre_count[genre] = Song
+    count = {}
+    songs = @@all.uniq{|song| song.name}
+    genres = songs.collect{|song| song.genre}
+    genres = genres.uniq{|genre| genre}
+    genres.each do |genre|
+      count[genre] = songs.count {|song| song.genre == genre}
     end
-    genre_count
+    count
 end
 
 def self.artist_count
-  artist_count = {}
-  @@artists.each_pair do |artist, song|
-    artist_count[artist] = song
+  count = {}
+  songs = @@all.uniq{|song| song.name}
+  artists = songs.collect{|song| song.artist}
+  artists = artists.uniq{|artist| artist}
+  artists.each do |artist|
+    count[artist] = songs.count {|song| song.artist == artist}
   end
-  artist_count
-  end
+  count
+end
 end
