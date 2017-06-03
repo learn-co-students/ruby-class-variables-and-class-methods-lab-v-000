@@ -42,11 +42,7 @@ class Song
   def self.artist_count
     artist_count = {}
     @@artists.each do |e|
-      if !artist_count.include?(e)
-        artist_count.store(e, 1)
-      else
-        artist_count[e] += 1
-      end
+      !artist_count.include?(e) ? artist_count.store(e, 1) : artist_count[e] += 1
     end
     artist_count
   end
