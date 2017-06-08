@@ -46,7 +46,3 @@ class Song
   end
 
 end
-
-# nin = Album.new("downward", "NIN", "metal")
-# korn = Album.new("Shoots and Ladders", "Korn", "metal")
-# radiohead = Album.new("Parinoid", "RadioHead", "Post")
