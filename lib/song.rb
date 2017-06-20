@@ -28,11 +28,11 @@ class Song
 
   def self.genre_count
     genre_histogram = {}
-    @@genres.each do |k,v|
-      if genre_histogram.has_key?(k)
-        genre_histogram[k] += 1
+    @@genres.each do |g|
+      if genre_histogram.has_key?(g)
+        genre_histogram[g] += 1
       else
-        genre_histogram[k] = 1
+        genre_histogram[g] = 1
       end
     end
     genre_histogram
@@ -40,11 +40,11 @@ class Song
 
   def self.artist_count
     artist_histogram = {}
-    @@artists.each do |k,v|
-      if artist_histogram.has_key?(k)
-       artist_histogram[k] += 1
+    @@artists.each do |a|
+      if artist_histogram.has_key?(a)
+       artist_histogram[a] += 1
       else
-        artist_histogram[k] = 1
+        artist_histogram[a] = 1
       end
     end
     artist_histogram
