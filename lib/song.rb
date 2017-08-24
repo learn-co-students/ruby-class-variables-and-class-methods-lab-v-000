@@ -51,6 +51,7 @@ def self.artist_count
       artists_hash[artist] += 1
     else
       artists_hash[artist] = 1
+      binding.pry
     end
   end
   artists_hash
