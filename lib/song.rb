@@ -1,61 +1,54 @@
 #Song class tracks the number of songs it creates, shows all the artists of existing songs, shows all the genres of existing songs, keeps track of the number of songs of each genre it creates, reveal the number of songs each artists is responsible for.
 class Song
-  attr_accessor :name, :artist, :genre
 
-  @@count = 0 #keeps track of new songs created from Song class
-  @@artists = [] #contains all of the artists of exisiting song as was pushed from initialize method
-  @@genres = [] #contains all of the genres of exisiting song as was pushed from initialize method
-  #@@genre_count = {}
-  #@@artist_count = {}
+  attr_accessor :name, :artist, :genre
+  @@count = 0
+  @@artists = []
+  @@genres = []
 
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
     @genre = genre
     @@count += 1
-    @@genres << genre
     @@artists << artist
+    @@genres << genre
   end
 
   def self.count
-    #total number of soungs created
     @@count
   end
 
-  def self.genres
-    #returns array of all the genres of exisiting songs; no duplicates
-    @@genres.uniq
-  end
-
   def self.artists
-    #returns array of all artists of the existing songs; only unique artists, no repeats
     @@artists.uniq
   end
 
+  def self.genres
+    @@genres.uniq
+  end
+
   def self.genre_count
-    #returns hash; keys are names of each genre; each genre key point to value that is the number of songs that have that genre (HISTOGRAM)
-    genre_count = {}
-    @@genres.each do |genre|
-      if genre_count[genre]
-        genre_count[genre] +=1
+    number_of_genres = {} #keys = names of each genre; values = number of songs in that genre
+    @@genres.each do |song_genre|
+      if number_of_genres[song_genre] #if hash has a key of a genre, increment value by 1, else, create a new key/value pair.
+        number_of_genres[song_genre] += 1
       else
-        genre_count[genre] = 1
+        number_of_genres[song_genre] = 1
       end
     end
-    genre_count
+    number_of_genres
   end
 
   def self.artist_count
-    #retuns historgram similar to genre_count but for artists
-    artist_count = {}
-    @@artists.each do |artist|
-      if artist_count[artist]
-        artist_count[artist] +=1
+    number_of_artists = {} #keys = names of each artists; values = number of artists in that artists
+    @@artists.each do |artist_name|
+      if number_of_artists[artist_name] #if hash has a key of a artist, increment value by 1, else, create a new key/value pair.
+        number_of_artists[artist_name] += 1
       else
-        artist_count[artist] = 1
+        number_of_artists[artist_name] = 1
       end
     end
-    artist_count
+    number_of_artists
   end
 
 end
