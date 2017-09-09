@@ -6,10 +6,6 @@ attr_accessor :name, :artist, :genre
 @@genres = [] #array of all genres
 @@artists = [] #array of all artist
 
-@@artist_count = {} #hash of {artist = > artist of genre}
-@@genre_count = {} #hash of {generes = > count of genre}
-
-
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
@@ -33,27 +29,36 @@ attr_accessor :name, :artist, :genre
   end
 
   def self.genre_count
+    genre_count = {}
+
     @@genres.each do |genre|
 
-      if @@genre_count.keys.include?(genre)
-        @@genre_count[genre] += 1
+      if genre_count.keys.include?(genre)
+        genre_count[genre] += 1
       else
-        @@genre_count[genre] = 1
+        genre_count[genre] = 1
       end
     end
-    @@genre_count
+    genre_count
   end
 
   def self.artist_count
+    artist_count = {}
+
     @@artists.each do |artist|
 
-      if @@artist_count.has_key?(artist)
-        @@artist_count[artist] += 1
+      if artist_count.has_key?(artist)
+        artist_count[artist] += 1
       else
-        @@artist_count[artist] = 1
+        artist_count[artist] = 1
       end
     end
-    @@artist_count
+    artist_count
   end
 
 end
+
+Song.new("song1", "artist1", "rap")
+Song.new("song2", "artist2", "rap")
+Song.new("song3", "artist2", "rock")
+Song.new("song4", "artist3", "country")
