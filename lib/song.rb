@@ -1,12 +1,11 @@
 require 'pry'
-class Song 
+class Song
   attr_accessor :name, :artist, :genre
   attr_reader :count
 
   @@count = 0
   @@genres = Array.new
   @@artists = Array.new
-  SONGS = []
   @@genre_count = {}
   @@artist_count = {}
 
