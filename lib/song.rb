@@ -25,9 +25,9 @@ class Song
     end
 
     unless @@artist_count.has_key?(artist)
-      @@artist_countt[artist] = 1
+      @@artist_count[artist] = 1
     else
-      @@artist_countt[artist] += 1
+      @@artist_count[artist] += 1
     end
 
   end
