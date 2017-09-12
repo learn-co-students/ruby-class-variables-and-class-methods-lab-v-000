@@ -33,9 +33,9 @@ class Song
     @@genres.each do |i|
       if hash.keys.include?(i) == false; 
         hash[i] = 1
-          else hash[i]+=1 
-        end
+      else hash[i]+=1 
       end
+		end
     hash
   end
 
@@ -44,10 +44,9 @@ class Song
     @@artists.each do |i|
       if hash.keys.include?(i) == false; 
         hash[i] = 1
-          else hash[i]+=1 
-        end
-      end
+      else hash[i]+=1 
+			end
+		end
     hash
   end
-
 end
