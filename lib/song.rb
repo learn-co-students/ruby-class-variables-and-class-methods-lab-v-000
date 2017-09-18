@@ -30,16 +30,17 @@ class Song
 
   def self.genre_count
     # {"pop": 1, "rap": 2}
-    genre_count ={}
-    @@genres.each do |song_genre|
-      if genre_count[song_genre]
-        genre_count[song_genre] +=1
-      else
-        genre_count[song_genre] = 1
+    @@genres.reduce({}) do |hash, element|
+        if hash[element]
+          hash[element] += 1
+          hash
+        else
+          hash[element] = 1
+          hash
+        end
       end
-    end
-  genre_count
 end
+
 
   def self.artist_count
     artist_count ={}
