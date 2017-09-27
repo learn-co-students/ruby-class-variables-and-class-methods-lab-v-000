@@ -30,27 +30,26 @@ def self.artists
 end
 
 def self.genre_count
-  g_hash={}
+  genre_count={}
     @@genres.each do |genre|
-      if g_hash.has_key?(genre)
-        g_hash[genre] +=1
+      if genre_count.has_key?(genre) # other option artist_count[artist]
+        genre_count[genre] +=1
       else
-        g_hash[genre] = 1
+        genre_count[genre] = 1
       end
     end
-    g_hash
+    genre_count
   end
 
 def self.artist_count
-  a_hash={}
+  artist_count={}
   @@artists.each do |artist|
-    if a_hash.has_key?(artist)
-      a_hash[artist] += 1
+    if artist_count.has_key?(artist) #genre_count[genre]
+      artist_count[artist] += 1
     else
-      a_hash[artist] = 1
+      artist_count[artist] = 1
     end 
   end
-  a_hash
+  artist_count
 end
-
 end
