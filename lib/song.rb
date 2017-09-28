@@ -29,7 +29,7 @@ class Song
     @@genres
   end
 
-  def self.genre_count
+  def self.genre_count # method that returns a hash of genres and the number of songs that have those genres
     genre_hash = Hash.new(0)
     @@genres.each do |genre|
       genre_hash[genre] +=1
@@ -37,7 +37,7 @@ class Song
     genre_hash
   end
 
-  def self.artist_count
+  def self.artist_count  # method that returns a hash of artists and the number of songs that have those artists
     artist_hash = Hash.new(0)
     @@artists.each do |artist|
       artist_hash[artist] +=1
