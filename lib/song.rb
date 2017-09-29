@@ -21,18 +21,36 @@ class Song
   end
 
   def self.genres
-    @@genres << @genre if !@@genres.include?(@genre)
+    @@genres = @@genres.uniq
     @@genres
   end
 
   def self.artists
-    @@artists << @artist if !@@artists.include?(@artist)#not doing anything. how to delete duplicates from array?
+    @@artists = @@artists.uniq
     @@artists
   end
 
   def self.genre_count
     genre_count = {}
     @@genres.each do |genre|
+      if genre_count.include?(genre)
+        genre_count[genre] +=1
+      else
+        genre_count[genre] = 1
+      end
     end
+    genre_count
+  end
+
+  def self.artist_count
+    artist_count = {}
+    @@artists.each do |artist|
+      if artist_count.include?(artist)
+        artist_count[artist] += 1
+      else
+        artist_count[artist] = 1
+      end
+    end
+    artist_count
   end
 end
