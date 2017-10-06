@@ -41,6 +41,11 @@ class Song
     genre_hash
   end
 
+##############
+#This could also be solved by .group_by and .map
+#https://stackoverflow.com/questions/19101167/creating-a-histogram-in-ruby
+#https://stackoverflow.com/questions/3884829/ruby-how-to-group-a-ruby-array
+
   #class method that returns a hash of all artists and a count for each
   def self.artist_count
     artist_hash = {}
