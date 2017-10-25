@@ -18,7 +18,7 @@ class Song
   end
 
   def self.count
-    @name.count# TOTAL NUMBER OF SONGS CREATED
+    @name.each {|name| name.count}# TOTAL NUMBER OF SONGS CREATED
   end
 
   def self.genres(genre)
