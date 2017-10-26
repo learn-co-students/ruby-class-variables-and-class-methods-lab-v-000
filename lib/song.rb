@@ -1,20 +1,25 @@
 class Song
   attr_accessor :name, :artist, :genre
 
+  @@genres = []
+  @@artists = []
+  @@genre_count = {}
+
   @@count = 0
 
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
     @genre = genre
-    @@count +=1
-    @@genres = []
+
     @@genres << @genre
     # ITERATE OVER THIS ARRAY AND POPULATE A HASH WITH THE KEY VALUE PAIRS FROM THE genre_count METHOD
     #               NEED TO CHECK THAT HASH ALREADY CONTAINS A KEY OF A PARTICULAR GENRE
     #               IF DOES CONTAIN THAT KEY, INCREMENT VALUE OF KEY BY ONE. IF NOT, CREATE A NEW KEY/VALUE PAIR
-    @@artists = []
-    @@genre_count = {}
+
+    @@artists << @artist
+    @@count +=1
+
   end
 
   def self.count
