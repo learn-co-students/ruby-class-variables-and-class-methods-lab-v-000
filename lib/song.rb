@@ -12,15 +12,21 @@ class Song
     @artist = artist
     @genre = genre
 
-    @@genre_count
-    @@artist_count
+    @@genres << genre
+    @@artists << artist
+
+    @@count +=1
+
+    # @@genre_count
+    # @@artist_count
     # ITERATE OVER THIS ARRAY AND POPULATE A HASH WITH THE KEY VALUE PAIRS FROM THE genre_count METHOD
     #               NEED TO CHECK THAT HASH ALREADY CONTAINS A KEY OF A PARTICULAR GENRE
     #               IF DOES CONTAIN THAT KEY, INCREMENT VALUE OF KEY BY ONE. IF NOT, CREATE A NEW KEY/VALUE PAIR
   end
 
   def self.count
-    @name.each {|name| name.count}# TOTAL NUMBER OF SONGS CREATED
+    @@count
+    # TOTAL NUMBER OF SONGS CREATED
   end
 
   def self.genres(genre)
@@ -29,19 +35,20 @@ class Song
   end
 
   def self.artists
-    @artist[artist] ||= []
+    @@artists[@artist] ||= []
+    #Song .artists is a class method that returns a unique array of artists of existing songs
+
       # NO CONTAINING DUPLICATES
   end
 
   def self.genre_count
-    @@genre_count << @genre.each {|name, value|}
-    @@count +=1
+    @@genre_count << @ge[artinre.each {|name, value|}
+
     # RETURNS A HASH IN WHICH KEYS ARE NAMES OF EACH GENRE, WHICH POINT TO A VALUE THAT IS THE NUMBER OF SONGS THAT HAVE THAT GENRE
   end
 
   def self.artist_count
     @@artist_count << @artist.each {|name, value|}
-    @@count +=1
     # RETURNS A HASH IN WHICH KEYS ARE NAMES OF EACH ARTIST, WHICH POINT TO A VALUE THAT IS THE NUMBER OF SONGS THAT HAVE THAT ARTIST
   end
 

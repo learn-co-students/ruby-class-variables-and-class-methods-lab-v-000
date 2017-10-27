@@ -1,6 +1,5 @@
 require "spec_helper"
 
-require 'pry'
 
 describe "Song" do
 
@@ -48,7 +47,6 @@ describe "Song" do
 
     it "has a class variable, @@artists, that contains all of the artists of existing songs" do
 
-binding.pry
 
       expect(Song.class_variable_get(:@@artists)).to match(["Jay-Z", "Jay-Z", "Brittany Spears"])
     end
