@@ -29,23 +29,24 @@ class Song
     # TOTAL NUMBER OF SONGS CREATED
   end
 
-  def self.genres(genre)
-    @genre[genre] ||= []
-      # NO RETURNING DUPLICATESkey
+  def self.genres
+    @@genres.uniq
   end
 
   def self.artists
-    @@artists[@artist] ||= []
-    #Song .artists is a class method that returns a unique array of artists of existing songs
-
-      # NO CONTAINING DUPLICATES
+    @@artists.uniq
   end
 
+  # Song .artists is a class method that returns a unique array of artists of existing songs
+
+  # NO CONTAINING DUPLICATES
+
   def self.genre_count
-    @@genre_count << @ge[artinre.each {|name, value|}
+    @@genre_count << @genre.each {|name, value|}
 
     # RETURNS A HASH IN WHICH KEYS ARE NAMES OF EACH GENRE, WHICH POINT TO A VALUE THAT IS THE NUMBER OF SONGS THAT HAVE THAT GENRE
   end
+
 
   def self.artist_count
     @@artist_count << @artist.each {|name, value|}
