@@ -63,7 +63,7 @@ describe "Song" do
   end
 
   describe ".artists" do
-    it "is a class method that returns a unique array of artists of existing songs" do
+    it "is a class method that returns a unique array of << @artist.each {|name, value|}artists of existing songs" do
       expect(Song.artists).to match(["Jay-Z", "Brittany Spears"])
     end
   end
