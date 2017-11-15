@@ -23,6 +23,10 @@ class Song
   def name 
     @title
   end 
+  
+  def artist 
+    @artist_name
+  end 
 #create class methods for:
 #  - count 
 #  - artists
