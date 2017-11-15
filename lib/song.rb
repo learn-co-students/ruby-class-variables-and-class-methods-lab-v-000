@@ -48,6 +48,8 @@ class Song
     def self.artist_count
       # create a hash to store artist_count
       songs_hash = {}
+      @@artists
+      binding.pry
     end 
 # create initialize method, 
     def initialize(title, artist_name, genre)
