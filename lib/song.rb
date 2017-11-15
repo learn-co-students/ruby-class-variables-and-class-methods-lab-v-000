@@ -13,7 +13,7 @@ class Song
       #  - artist name 
       #  - genre 
       @title = title
-      @artist_name = [artist_name]
+      @artist_name << artist_name
       @genre = genre 
       @@count += 1
     end 
