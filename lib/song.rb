@@ -27,6 +27,11 @@ class Song
       @@genres.uniq
     end 
   
+    def self.genre_count
+      @@genres.to_h
+      binding.pry
+    end
+    
 # create initialize method, 
     def initialize(title, artist_name, genre)
       # upon initialization include
@@ -49,11 +54,5 @@ class Song
   def name 
     @title
   end 
-  
-#create class methods for:
-#  - count 
-#  - artists
-#  - genres 
-#  - genre count
-#  - artist count
+
 end 
