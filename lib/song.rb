@@ -14,7 +14,8 @@ class Song
       #  - genre 
       @title = title
       @artist_name = artist_name
-      @genre = genre  
+      @genre = genre 
+      @@count += 1
     end 
 
 #create instance methods for:
