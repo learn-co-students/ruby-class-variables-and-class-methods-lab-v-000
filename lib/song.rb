@@ -19,11 +19,13 @@ class Song
     end
   
     def self.artists
-        if !@@artists.include?(@artist)
-          @@artists
-          binding.pry
-        end
+        @@artists.uniq
+        # if the artists class variable array includes artist already, don't return same values 
     end
+  
+    def self.genres
+      @@genres.uniq
+    end 
   
 # create initialize method, 
     def initialize(title, artist_name, genre)
