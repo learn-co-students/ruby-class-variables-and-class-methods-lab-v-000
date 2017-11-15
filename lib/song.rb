@@ -4,7 +4,7 @@ class Song
 # add attribute accessors for title, artist name and genre 
   attr_reader :title, :artist_name, :genre
   @@count = 0 
-  
+  @@artists = @artist_name
   
 # create initialize method, 
     def initialize(title, artist_name, genre)
