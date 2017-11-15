@@ -3,24 +3,25 @@ require 'pry'
 class Song
 # add attribute accessors for title, artist name and genre 
    attr_reader :title, :artist_name, :genre
-## create initialize method, 
+  
+# create initialize method, 
     def initialize(title, artist_name, genre)
+      # upon initialization include
+      #  - song title 
+      #  - artist name 
+      #  - genre 
       @title = title
       @artist_name = artist_name
-      @genre = genre 
-      
+      @genre = genre  
     end 
-## upon initialization include
-##  - song title 
-##  - artist name 
-##  - genre 
-#
+
 #create instance methods for:
 #  - name 
 #  - artist 
 #  - genre 
 #  - count 
-#
+
+  
 #create class methods for:
 #  - count 
 #  - artists
