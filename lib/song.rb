@@ -31,8 +31,7 @@ class Song
       # create or pull key value pair
       # genre - key 
       # number - value
-      count_hash = {}
-      
+      count_hash = {} 
       @@genres.each do |genre|
       # check to see if the key exists in count_hash
         if !count_hash[genre]
