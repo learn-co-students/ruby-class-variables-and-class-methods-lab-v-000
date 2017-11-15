@@ -16,7 +16,10 @@ class Song
     def self.count 
     # use the self keyword
       @@count
-      binding.pry 
+    end
+  
+    def self.artists
+    
     end
   
 # create initialize method, 
@@ -48,7 +51,4 @@ class Song
 #  - genres 
 #  - genre count
 #  - artist count
-  def count
-  
-
-end
+end 
