@@ -1,5 +1,6 @@
 require 'pry'
-## create class Song 
+## create class Song
+class Song
 #
 ## create initialize method, 
 ## upon initialization include
@@ -20,4 +21,4 @@ require 'pry'
 #  - genre count
 #  - artist count
 
-binding.pry
+end
