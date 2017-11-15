@@ -46,6 +46,7 @@ class Song
     end
     
     def self.artist_count
+      # create a hash to store artist_count
       songs_hash = {}
     end 
 # create initialize method, 
