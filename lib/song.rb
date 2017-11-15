@@ -20,8 +20,9 @@ class Song
 #  - artist 
 #  - genre 
 #  - count 
-
-  
+  def name 
+    @title
+  end 
 #create class methods for:
 #  - count 
 #  - artists
