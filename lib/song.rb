@@ -28,10 +28,24 @@ class Song
     end 
   
     def self.genre_count
-      new_count = {}
-      new_count[@@genres]
+      # create or pull key value pair
+      # genre - key 
+      # number - value
+      count_hash = {}
       
-      binding.pry
+      @@genres.each do |genre|
+      # check to see if the key exists in count_hash
+        if !count_hash[genre]
+          count_hash[genre] = 1
+        
+      # if it doesn't exist in count_hash, set equal to one
+        else
+          count_hash[genre] += 1
+        
+      # if key does exist in count_hash, add one
+      end
+      end
+      count_hash
     end
     
 # create initialize method, 
