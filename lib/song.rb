@@ -1,3 +1,4 @@
+require 'pry'
 ## create class Song 
 #
 ## create initialize method, 
@@ -18,3 +19,5 @@
 #  - genres 
 #  - genre count
 #  - artist count
+
+binding.pry
