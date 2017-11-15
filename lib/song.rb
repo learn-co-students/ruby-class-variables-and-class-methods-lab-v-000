@@ -19,7 +19,10 @@ class Song
     end
   
     def self.artists
-    
+        if !@@artists.include?(@artist)
+          @@artists
+          binding.pry
+        end
     end
   
 # create initialize method, 
