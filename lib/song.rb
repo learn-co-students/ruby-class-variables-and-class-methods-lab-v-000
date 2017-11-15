@@ -3,6 +3,10 @@ require 'pry'
 class Song
 #
 ## create initialize method, 
+    def initialize(title)
+    
+      
+    end 
 ## upon initialization include
 ##  - song title 
 ##  - artist name 
