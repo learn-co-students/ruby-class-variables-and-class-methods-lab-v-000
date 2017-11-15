@@ -2,7 +2,7 @@ require 'pry'
 ## create class Song
 class Song
 # add attribute accessors for title, artist name and genre 
-  attr_accessor :title, :artist_name, :genre
+  attr_accessor :title, :artist_title, :genre
   @@count = 0 
   @@artists = []
   
@@ -13,7 +13,7 @@ class Song
       #  - artist name 
       #  - genre 
       @title = title
-      @artist_name << artist_name
+      @@artists << artist_name
       @genre = genre 
       @@count += 1
     end 
@@ -26,9 +26,9 @@ class Song
   def name 
     @title
   end 
-  
+ 
   def artist 
-    @artist_name
+    @artist_title 
   end 
 #create class methods for:
 #  - count 
