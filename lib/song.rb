@@ -7,6 +7,18 @@ class Song
   @@artists = []
   @@genres = []
   
+  #create class methods for:
+#  - count 
+#  - artists
+#  - genres 
+#  - genre count
+#  - artist count
+    def self.count 
+    # use the self keyword
+      @@count
+      binding.pry 
+    end
+  
 # create initialize method, 
     def initialize(title, artist_name, genre)
       # upon initialization include
@@ -29,7 +41,6 @@ class Song
   def name 
     @title
   end 
- 
   
 #create class methods for:
 #  - count 
@@ -37,5 +48,7 @@ class Song
 #  - genres 
 #  - genre count
 #  - artist count
+  def count
+  
 
 end
