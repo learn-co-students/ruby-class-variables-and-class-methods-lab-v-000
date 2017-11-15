@@ -36,16 +36,14 @@ class Song
       @@genres.each do |genre|
       # check to see if the key exists in count_hash
         if !count_hash[genre]
+       # if key doesn't exist in count_hash, set equal to one
           count_hash[genre] = 1
-        
-      # if it doesn't exist in count_hash, set equal to one
+        # if key does exist in count_hash, add one
         else
           count_hash[genre] += 1
-        
-      # if key does exist in count_hash, add one
-      end
-      end
-      count_hash
+            end
+        end
+          count_hash
     end
     
 # create initialize method, 
