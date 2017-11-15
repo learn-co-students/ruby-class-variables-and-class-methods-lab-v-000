@@ -28,7 +28,9 @@ class Song
     end 
   
     def self.genre_count
-      @@genres.to_h
+      new_count = {}
+      new_count[@@genres]
+      
       binding.pry
     end
     
