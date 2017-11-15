@@ -2,9 +2,9 @@ require 'pry'
 ## create class Song
 class Song
 # add attribute accessors for title, artist name and genre 
-  attr_reader :title, :artist_name, :genre
+  attr_accessor :title, :artist_name, :genre
   @@count = 0 
-  @@artists = @artist_name
+  @@artists = []
   
 # create initialize method, 
     def initialize(title, artist_name, genre)
@@ -13,7 +13,7 @@ class Song
       #  - artist name 
       #  - genre 
       @title = title
-      @artist_name = artist_name
+      @artist_name = [artist_name]
       @genre = genre 
       @@count += 1
     end 
