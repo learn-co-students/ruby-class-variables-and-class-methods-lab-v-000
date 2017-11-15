@@ -45,6 +45,9 @@ class Song
           count_hash
     end
     
+    def self.artist_count
+      songs_hash = {}
+    end 
 # create initialize method, 
     def initialize(title, artist_name, genre)
       # upon initialization include
