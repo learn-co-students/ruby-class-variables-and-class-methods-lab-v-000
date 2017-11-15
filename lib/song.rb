@@ -48,8 +48,14 @@ class Song
     def self.artist_count
       # create a hash to store artist_count
       songs_hash = {}
-      @@artists
-      binding.pry
+      @@artists.each do |songs|
+        if !songs_hash[songs]
+          songs_hash[songs] = 1 
+        else 
+          songs_hash[songs] += 1
+        end
+      end
+        songs_hash
     end 
 # create initialize method, 
     def initialize(title, artist_name, genre)
