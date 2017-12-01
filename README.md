@@ -2,7 +2,6 @@
 
 ## Objectives
 
-1. Hello prince
 1. Use class variables to keep track of data pertaining to a class.
 2. Define class methods to expose data pertaining to a class.
 
