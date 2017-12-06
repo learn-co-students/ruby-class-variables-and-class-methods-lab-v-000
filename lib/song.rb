@@ -1,11 +1,9 @@
 class Song
+  attr_reader :name, :artist, :genre
 
   @@count = 0
   @@artists = []
   @@genres = []
-
-
-  attr_reader :name, :artist, :genre
 
   def initialize(name, artist, genre)
     @name = name
@@ -39,6 +37,4 @@ class Song
     @@artists.uniq.map { |artist| result[artist] = @@artists.count(artist) }
     result
   end
-
-
 end
