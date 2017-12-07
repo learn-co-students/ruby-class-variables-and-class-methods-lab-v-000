@@ -33,4 +33,15 @@ class Song
     genres
   end
 
+def self.genre_count
+  counts = Hash.new 0
+  @@genres.collect do |genre|
+    if counts[genre]
+      counts[genre]  += 1
+    else
+      counts [genre] = 1
+    end
+  end
+  counts
+end
 end
