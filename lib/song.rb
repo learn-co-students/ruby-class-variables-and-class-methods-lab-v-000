@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
   attr_accessor :name, :artist, :genre
   @@count = 0
@@ -15,6 +17,20 @@ class Song
 
   def self.count
     @@count
+  end
+
+  def self.artists
+    @@artists = @@artists.uniq
+  end
+
+  def self.genres
+    genres = []
+    @@genres.each do |style|
+      if !genres.include?(style)
+        genres << style
+      end
+    end
+    genres
   end
 
 end
