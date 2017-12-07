@@ -44,4 +44,18 @@ def self.genre_count
   end
   counts
 end
+
+
+def self.artist_count
+  counts = Hash.new 0
+  @@artists.collect do |artist|
+    if counts[artist]
+      counts[artist] += 1
+    else
+      counts[artist] = 1
+    end
+  end
+  counts    
+end
+
 end
