@@ -1,37 +1,42 @@
 class Song
+
+  attr_accessor :name, :artist, :genre
+
   @@count = 0
+  @@genres = []
+  @@artists = []
+
+  def initialize(name, artist, genre)
+    @name = name
+    @artist = artist
+    @genre = genre
+    @@artists << artist
+    @@genres << genre
+    @@count += 1
+  end
 
   def self.count
     @@count
   end
 
-  @@genres = []
 
   def self.genres
     @@genres.uniq
-  end
-
-  def self.genre_count
-    @@genres.inject(Hash.new(0)) { |total, i| total[i] += 1 ; total }
-  end
-
-  @@artists = []
-
-  def self.artist_count
-    @@artists.inject(Hash.new(0)) { |total, i| total[i] += 1 ; total }
   end
 
   def self.artists
     @@artists.uniq
   end
 
-  def initialize(name, artist, genre)
-    @name = name
-    @artist = artist
-    @@artists << artist
-    @genre = genre
-    @@genres << genre
-    @@count += 1
+  def self.genre_count
+    @@genres.inject(Hash.new(0)) { |total, i| total[i] += 1 ; total }
   end
-  attr_accessor :name, :artist, :genre
+
+  def self.artist_count
+    @@artists.inject(Hash.new(0)) { |total, i| total[i] += 1 ; total }
+  end
+
+
+
+
 end
