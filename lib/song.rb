@@ -20,26 +20,36 @@ class Song
   end
 
   def self.artists
-    @@artists.uniq do |artist|
-      artist
-    end
+    @@artists.uniq
   end
 
   def self.genres
-    @@genres.uniq do |genre|
-      genre
-    end
+    @@genres.uniq
   end
 
   def self.genre_count
-    genres_hash = Hash.new(0)
-    genres_hash.tap { |hash| @@genres.each { |genre| hash[genre] += 1 } }
+    genre_count = {}
+    @@genres.each do |genre|
+      if genre_count[genre]
+        genre_count[genre] += 1
+      else
+        genre_count[genre] = 1
+      end
+    end
+    genre_count
   end
 
   def self.artist_count
-    artist_hash = Hash.new(0)
-    artist_hash.tap { |hash| @@artists.each { |artist| hash[artist] += 1} }
+    artist_count = {}
+    @@artists.each do |artist|
+      if artist_count[artist]
+        artist_count[artist] += 1
+      else
+        artist_count[artist] = 1
+      end
+    end
+    artist_count
   end
-  
+
 
 end
