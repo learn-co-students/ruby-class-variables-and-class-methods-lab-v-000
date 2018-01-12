@@ -5,8 +5,14 @@ def callsong(clas)
   song  = clas.new("aa", "bb", "cc")
   Song.count
   Song.artists
+  Song.artist_a
+  Song.artist_a
   Song.genres
   Song.genre_count
+  puts "aaaa"
+  puts "cccccccccccc"
+  Song.artist_count
+  puts "bbb"
 end
 class Song
   attr_accessor  :name, :artist, :genre
@@ -25,6 +31,28 @@ class Song
     @@genres       << genre
     @@count         += 1
   end
+#  def self.artist_count
+#    puts "zzzzzzzzzzzzzzzzz"
+    #  puts @@artists
+    #  puts "in"
+    #    puts "ddddddddddddddd"
+    #    @@artists.each do |artist|
+    #      if @@artist_count[artist] == nil
+    #        @@artist_count[artist] = 1
+    #        puts @@artist_count
+    #      end
+    #    end
+    #  else
+    #    @@artist_count.each do |cartist, cartist_value|
+    #      if cartist == artist
+    #        @@artist_count[artist] = cartist_value + 1
+    #      end
+    #    end
+    #  end
+    #  end
+    #    @@artist_count
+    #    puts "xxxxxxxxxxxxxxxx"
+#  end
 
   def self.count
     puts @@count
@@ -46,20 +74,6 @@ class Song
       @@genre_count
     end
 
-    def self.artist_count
-      @@artists.each do |artist|
-        if @@artist_count[artist] == nil
-          @@artist_count[artist] = 1
-        else
-          @@artist_count.each do |cartist, cartist_value|
-            if cartist == artist
-              @@artist_count[artist] = cartist_value + 1
-            end
-          end
-        end
-      end
-        @@artist_count
-      end
 
     def self.artist_count
       @@artist_count
@@ -72,7 +86,9 @@ class Song
     def self.genres
       @@genres.uniq
     end
+      def self.artist_a
+        puts "ddddddddddddddd"
+      end
 
   end
-
 callsong(Song)

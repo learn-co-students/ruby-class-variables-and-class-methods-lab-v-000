@@ -77,7 +77,7 @@ describe "Song" do
   end
 
   describe ".artist_count" do
-    xit "is a class method that returns a hash of artists and the number of songs that have those artists" do
+    it "is a class method that returns a hash of artists and the number of songs that have those artists" do
       expect(Song.artist_count).to eq({"Brittany Spears" => 1, "Jay-Z" => 2})
     end
   end
