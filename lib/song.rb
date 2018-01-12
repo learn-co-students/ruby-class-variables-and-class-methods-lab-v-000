@@ -29,6 +29,17 @@ class Song
         @@genre_count[genre] = 1
       end
 
+=======
+    genre.each do |genre|
+      if @@genre_count.fetch(genre) = false
+        @@genre_count = {genre: 1}
+
+      else
+           @@genre_count.each do |k, v| if k = genre_count
+             @@genre_count(genre) = v + 1
+           end
+      end
+    end
   end
 
   def artist_count
