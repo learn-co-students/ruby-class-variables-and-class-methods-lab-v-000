@@ -33,7 +33,7 @@ describe "Song" do
   end
 
   describe "#genre" do
-    xit "has a genre" do
+    it "has a genre" do
       expect(hit_me.genre).to eq("pop")
     end
   end
@@ -53,7 +53,7 @@ describe "Song" do
   end
 
   describe ".count" do
-    xit "is a class method that returns that number of songs created" do
+    it "is a class method that returns that number of songs created" do
       expect(Song.count).to eq(3)
     end
   end
@@ -71,7 +71,7 @@ describe "Song" do
   end
 
   describe ".genre_count" do
-    xit "is a class method that returns a hash of genres and the number of songs that have those genres" do
+    it "is a class method that returns a hash of genres and the number of songs that have those genres" do
       expect(Song.genre_count).to eq({"pop" => 1, "rap" => 2})
     end
   end

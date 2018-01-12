@@ -1,3 +1,13 @@
+
+def callsong(clas)
+  song  = clas.new("aa", "bb", "cc")
+  song  = clas.new("aa", "bb", "cc")
+  Song.count
+  Song.artists
+  Song.genres
+  Song.genre_count
+
+end
 class Song
   attr_accessor  :name, :artist, :genre
 
@@ -7,42 +17,41 @@ class Song
   @@artist_count  =   {}
   @@genre_count   =   {}
 
-  def initialize(name, artist, genres)
+  def initialize(name, artist, genre)
     @name          = name
     @artist        = artist
     @genre         = genre
     @@artists      << artist
-    @@genres       << genres
+    @@genres       << genre
     @@count         += 1
-    #@@genere_count  += 1
-    #@@artist_count  += 1
   end
   def self.count
+    puts @@count
     @@count
   end
 
-  def genre_count
-    genre.each do |genre|
-      if @@genre_count.fetch(genre) = false
-        @@genre_count[genre] = 1
-      else
-        @@genre_count[genre] = 1
-      end
-
-=======
-    genre.each do |genre|
-      if @@genre_count.fetch(genre) = false
-        @@genre_count = {genre: 1}
+  def self.genre_count
+    @@genres.each do |genre|
+      if @@genre_count[genre] == nil
+          puts "false"
+          @@genre_count[genre] = 1
+          puts @@genre_count
 
       else
-           @@genre_count.each do |k, v| if k = genre_count
-             @@genre_count(genre) = v + 1
-           end
+        @@genre_count.each do |k, v| if k == genre
+          puts k
+
+          puts v
+          @@genre_count[k] = v + 1
+          puts @@genre_count
+                end
+              end
       end
     end
+    @@genre_count
   end
 
-  def artist_count
+  def self.artist_count
     @@artist_count
   end
 
@@ -50,7 +59,9 @@ class Song
     @@artists.uniq
   end
 
-  def self.genre
+  def self.genres
     @@genres.uniq
   end
 end
+
+callsong(Song)
