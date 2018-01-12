@@ -22,7 +22,13 @@ class Song
   end
 
   def genre_count
-    @@genre_count
+    genre.each do |genre|
+      if @@genre_count.fetch(genre) = false
+        @@genre_count[genre] = 1
+      else
+        @@genre_count[genre] = 1
+      end
+
   end
 
   def artist_count
@@ -30,7 +36,7 @@ class Song
   end
 
   def self.artists
-    @@artist.uniq
+    @@artists.uniq
   end
 
   def self.genre
