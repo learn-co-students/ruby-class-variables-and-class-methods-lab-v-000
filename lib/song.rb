@@ -3,6 +3,20 @@ def callsong(clas)
 ###THIS METHOD IS FOR TESTING PURPOSE ONLY
   song  = clas.new("aa", "bb", "cc")
   song  = clas.new("aa", "bb", "cc")
+  song  = clas.new("aa", "bb", "cc")
+  song  = clas.new("aa", "bb", "cc")
+  song  = clas.new("aa", "dd", "cc")
+  song  = clas.new("aa", "dd", "cc")
+  song  = clas.new("aa", "xx", "cc")
+  song  = clas.new("aa", "xx", "cc")
+
+
+
+
+
+
+
+
   Song.count
   Song.artists
   Song.artist_a
@@ -64,30 +78,37 @@ class Song
     def self.genres
       @@genres.uniq
     end
+
       def self.artist_a
         puts "ddddddddddddddd"
       end
+
         def self.artist_count
-          puts "zzzzzzzzzzzzzzzzz"
+        puts "zzzzzzzzzzzzzzzzz"
         puts @@artists
         puts "in"
-          puts "ddddddddddddddd"
+        puts "ddddddddddddddd"
           @@artists.each do |artist|
             if @@artist_count[artist] == nil
               @@artist_count[artist] = 1
               puts @@artist_count
-            end
-          end
+              puts "if"
         else
           @@artist_count.each do |cartist, cartist_value|
+            puts "else"
             if cartist == artist
-              @@artist_count[artist] = cartist_value + 1
+              puts cartist
+              puts cartist_value
+              puts @@artist_count
+              @@artist_count[cartist] = cartist_value + 1
+              puts @@artist_count
+              puts cartist_value
             end
           end
         end
         end
+        puts "xxxxxxxxxxxxxxxx"
           @@artist_count
-          puts "xxxxxxxxxxxxxxxx"
         end
 
   end
