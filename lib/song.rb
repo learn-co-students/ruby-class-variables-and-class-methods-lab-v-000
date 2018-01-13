@@ -31,28 +31,6 @@ class Song
     @@genres       << genre
     @@count         += 1
   end
-#  def self.artist_count
-#    puts "zzzzzzzzzzzzzzzzz"
-    #  puts @@artists
-    #  puts "in"
-    #    puts "ddddddddddddddd"
-    #    @@artists.each do |artist|
-    #      if @@artist_count[artist] == nil
-    #        @@artist_count[artist] = 1
-    #        puts @@artist_count
-    #      end
-    #    end
-    #  else
-    #    @@artist_count.each do |cartist, cartist_value|
-    #      if cartist == artist
-    #        @@artist_count[artist] = cartist_value + 1
-    #      end
-    #    end
-    #  end
-    #  end
-    #    @@artist_count
-    #    puts "xxxxxxxxxxxxxxxx"
-#  end
 
   def self.count
     puts @@count
@@ -89,6 +67,28 @@ class Song
       def self.artist_a
         puts "ddddddddddddddd"
       end
+        def self.artist_count
+          puts "zzzzzzzzzzzzzzzzz"
+        puts @@artists
+        puts "in"
+          puts "ddddddddddddddd"
+          @@artists.each do |artist|
+            if @@artist_count[artist] == nil
+              @@artist_count[artist] = 1
+              puts @@artist_count
+            end
+          end
+        else
+          @@artist_count.each do |cartist, cartist_value|
+            if cartist == artist
+              @@artist_count[artist] = cartist_value + 1
+            end
+          end
+        end
+        end
+          @@artist_count
+          puts "xxxxxxxxxxxxxxxx"
+        end
 
   end
 callsong(Song)
