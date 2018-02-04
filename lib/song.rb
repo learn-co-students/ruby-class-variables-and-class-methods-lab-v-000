@@ -5,6 +5,17 @@ class Song
     @@artists = []
     @@genres = []
 
+    def initialize(name, artist, genre)
+      @name = name
+      @artist = artist
+      @genre = genre
+
+      @@count += 1
+      @@artists << artist
+      @@genres << genre
+
+    end
+
     def self.count
       @@count
 
@@ -21,21 +32,37 @@ class Song
     end
 
     def self.genre_count
+      genre_count ={}
+      @@genres.each do |genre|
 
+        if genre_count[genre] != nil
+          genre_count[genre] += 1
+
+        else
+          genre_count[genre] = 1
+        end
+
+      end
+      #frequencies = Hash.new { |hash, key| hash[key] =  }
+      #@@genres.group_by {|genre| genre +=1}
+
+      genre_count
 
     end
 
-    def initialize(name, artist, genre)
-      @name = name
-      @artist = artist
-      @genre = genre
+    def self.artist_count
+      artist_count ={}
+      @@artists.each do |artist|
 
-      @@count += 1
-      @@artists << artist
-      @@genres << genre
+        if artist_count[artist] != nil
+          artist_count[artist] += 1
 
+        else
+          artist_count[artist] = 1
+        end
+
+      end
+      
+      artist_count
     end
-
-
-
   end
