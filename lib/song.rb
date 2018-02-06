@@ -1,47 +1,42 @@
-require 'pry'
 class Song
-  attr_reader :name, :artist, :genre
+  attr_accessor :name, :artist, :genre
 
   @@count = 0
-  @@genres = []
   @@artists = []
-
-  class << self
-    def count
-      @@count
-    end
-  
-    def genres
-      @@genres.uniq
-    end
-  
-    def artists
-      @@artists.uniq
-    end
-  
-    def genre_count
-      group_count(@@genres)
-    end
-
-    def artist_count
-      group_count(@@artists)
-    end
-
-    private
-    def group_count(ary)
-      ary.group_by {|x| x }.map do |k,v| 
-        [k, v.length]
-      end.to_h
-    end
-  end
-
+  @@genres = []
+   
   def initialize(name, artist, genre)
+    @@count += 1 
     @name = name
     @artist = artist
     @genre = genre
-    @@count += 1
-    @@genres << genre
-    @@artists << artist
+    @@artists << self.artist
+    @@genres << self.genre
   end
-  
+
+  def self.count
+    @@count
+  end
+
+  def self.artists
+    @@artists.uniq
+  end
+
+  def self.genres
+    @@genres.uniq
+  end
+
+  def self.genre_count
+    genres_count = {}
+    @@genres.each do |genre|
+      if genres_count[genre]
+        genres_count[genre] += 1
+      else
+        genres_count[genre] = 1
+      end  
+    end
+  end
+    genres_count 
+  end
+
 end
