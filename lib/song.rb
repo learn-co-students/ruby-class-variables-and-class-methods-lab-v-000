@@ -1,7 +1,4 @@
-
-
 class Song
-
   attr_accessor :name, :artist, :genre
 
   @@count = 0
@@ -15,7 +12,6 @@ class Song
     @@count += 1
     @@genres << genre
     @@artists << artist
-
   end
 
   def self.count
@@ -23,48 +19,47 @@ class Song
   end
 
   def self.genres
-    no_duplicates = []
+    genre_array = []
     @@genres.each do |genre|
-      if no_duplicates.include?(genre) == false
-        no_duplicates << genre
+      if genre_array.include?(genre) == false
+        genre_array << genre
       end
     end
-    no_duplicates
+    genre_array
   end
 
   def self.artists
-    no_duplicates = []
+    artist_array = []
     @@artists.each do |artist|
-      if no_duplicates.include?(artist) == false
-        no_duplicates << artist
+      if artist_array.include?(artist) == false
+        artist_array << artist
       end
     end
-    no_duplicates
+    artist_array
   end
 
   def self.genre_count
-    @@genre_count = {}
+    count_hash = {}
     @@genres.each do |genre|
-      if @@genre_count.keys.include?(genre)
-        @@genre_count[genre] += 1
+      if count_hash.keys.include?(genre)
+        count_hash[genre] += 1
       else
-        @@genre_count[genre] = 1
+        count_hash[genre] = 1
       end
     end
-    @@genre_count
+    count_hash
   end
 
   def self.artist_count
-    @@artist_count = {}
+    count_hash = {}
     @@artists.each do |artist|
-      if @@artist_count.keys.include?(artist)
-        @@artist_count[artist] += 1
+      if count_hash.keys.include?(artist)
+        count_hash[artist] += 1
       else
-        @@artist_count[artist] = 1
+        count_hash[artist] = 1
       end
     end
-    @@artist_count
+    count_hash
   end
-
 
 end
