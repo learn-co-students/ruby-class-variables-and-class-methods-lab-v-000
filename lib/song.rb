@@ -26,12 +26,13 @@ attr_accessor :name, :artist, :genre
       @@genres.uniq!
     end
 
-    def genre_count
-      genre = {}
-      genre.collect do |genre|
-      if gerne.includes?(genre) then genre[genre] =+ 1 else genre[genre] = 1
+    def self.genre_count
+      genre_count = {}
+      @@genres.each do |genre|
+      if genre_count.include?(genre) then genre_count[genre] += 1 else genre_count[genre] = 1
       end
     end
+    genre_count
   end
     def artist_count
 
