@@ -29,7 +29,7 @@ attr_accessor :name, :artist, :genre
     def genre_count
       genre = {}
       genre.collect do |genre|
-      if gerne.[genre] then genre[genre] =+ 1 else genre[genre] = 1
+      if gerne.includes?(genre) then genre[genre] =+ 1 else genre[genre] = 1
       end
     end
   end
