@@ -41,8 +41,6 @@ attr_accessor :name, :artist, :genre
       end
     end
     artist_count
-        
-      
-
+  
     end
 end
