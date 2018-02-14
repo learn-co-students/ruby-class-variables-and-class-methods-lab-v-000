@@ -29,33 +29,29 @@ class Song
   end
 
   def self.genre_count
-    genre_hash = {}
-    num_of_this_genre = 0
-    @@genres.each do |genre|
-      if genre_hash.has_key?(genre)
-        genre_hash[genre] = num_of_this_genre += 1
-      else
-        num_of_this_genre = 0
-        genre_hash[genre] = num_of_this_genre
-        genre_hash[genre] = num_of_this_genre += 1
-      end
+  genre_hash = {}
+  @@genres.each do |genre|
+    if genre_hash[genre]
+      genre_hash[genre] += 1
+    else
+      genre_hash[genre] = 0
+      genre_hash[genre] += 1
     end
-    genre_hash
   end
+  genre_hash
+end
 
-  def self.artist_count
-    artist_hash = {}
-    num_of_this_artist = 0
-    @@artists.each do |artist|
-      if artist_hash.has_key?(artist)
-        artist_hash[artist] = num_of_this_artist += 1
-      else
-        num_of_this_artist = 0
-        artist_hash[artist] = num_of_this_artist
-        artist_hash[artist] = num_of_this_artist += 1
-      end
+def self.artist_count
+  artist_hash = {}
+  @@artists.each do |artist|
+    if artist_hash[artist]
+      artist_hash[artist] += 1
+    else
+      artist_hash[artist] = 0
+      artist_hash[artist] += 1
     end
-    artist_hash
   end
+  artist_hash
+end
 
 end
