@@ -27,7 +27,8 @@ def self.artists
 end
 
   def self.genre_count(genre, name)
-    h = Hash[@@genres.collect { |item| [item, item.count] } ]
+    inject(@@genres.new(0)) { |h, x| h[x] += 1; h}
+  	  end
   end
 
 
