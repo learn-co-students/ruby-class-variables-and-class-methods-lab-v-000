@@ -10,8 +10,8 @@ describe "Song" do
     Song.class_variable_set(:@@artists, [])
     Song.class_variable_set(:@@genres, [])
     Song.class_variable_set(:@@count, 0)
-    Song.class_variable_set(:@@artist_count, {})
-    Song.class_variable_set(:@@genre_count, {})
+    Song.class_variable_set(:@@artist_count, Hash.new {|g,s| s = 0})
+    Song.class_variable_set(:@@genre_count, Hash.new {|g,s| s = 0})
 
   end
   describe "#new" do 
