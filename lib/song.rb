@@ -17,26 +17,25 @@ class Song
   end
 
   def self.genres
-    @@genres.uniq!
+    @@genres.uniq
   end
 
   def self.artists
-    @@artists.uniq!
+    @@artists.uniq
   end
 
   def self.genre_count
-    Hash[*@@genres.group_by{ |genre| genre }.flat_map{ |genre, count| [genre, count.size] }]
+    #Hash[*@@genres.group_by{ |genre| genre }.flat_map{ |genre, count| [genre, count.size] }]
     @@genres.reduce(Hash.new(0)) do |hash, genre|
        hash[genre] += 1
        hash
        end
   end
 
-  def self.artist_count
+ def self.artist_count
     @@artists.reduce(Hash.new(0)) do |hash, artist|
        hash[artist] +=1
        hash
-  end
   end
 
 end
