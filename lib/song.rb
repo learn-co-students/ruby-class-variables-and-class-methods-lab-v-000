@@ -1,6 +1,14 @@
 
 class Song
   attr_reader :name, :artist, :genre
+  #note: specific writer methods are needed for artist and genre.  This is so
+  #      @@genres and @@artists stays in sync with the actual attribute values in instances.
+  #      Test spec does not seem to cover this situation but here is example: create song with
+  #      genre R&B and so @@genres[ "R&B" ].  Now change that song so genre is "Rap".
+  #      If using default genre writer, @@genres will still be R&B, right?  But actually
+  #      we want it to be "Rap"
+  #      An alternative would be to just keep array of all the Song objects and then
+  #      generate genres and artists arrays on demand.
   attr_writer :name
 
   @@count = 0
