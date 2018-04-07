@@ -39,15 +39,14 @@ class Song
     hash
   end
 
-  def self.artist_count
+	def self.artist_count 
     hash = {}
-    @@artists.each do |i|
-      if hash.keys.include?(i) == false; 
-        hash[i] = 1
-          else hash[i]+=1 
+    @@artists.each do |artist|
+      if hash.keys.include?(artist) == false; 
+        hash[artist] = 1
+      else hash[artist]+=1 
         end
-      end
+			end
     hash
   end
-
 end
