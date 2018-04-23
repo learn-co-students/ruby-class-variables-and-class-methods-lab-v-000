@@ -14,12 +14,12 @@ class Song
     @@count+=1
   end 
   
-  def self.count  #Returns a new array by removing duplicate values in self. If a block is given, it will use the return value of the block for comparison.
+  def self.count  
     @@count
   end
 
-  def self.artists
-    @@artists.uniq
+  def self.artists 
+    @@artists.uniq #Returns a new array by removing duplicate values in self. If a block is given, it will use the return value of the block for comparison.
   end
 
   def self.artist_count
