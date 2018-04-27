@@ -49,7 +49,6 @@ def self.artist_count
       artist_list[artist] =1
   end
 end
-binding.pry
   artist_list
 end
 
