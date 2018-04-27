@@ -38,15 +38,39 @@ class Song
       end
     hash
   end
-
-	def self.artist_count 
+ 
+  def self.genre_count
     hash = {}
-    @@artists.each do |artist|
-      if hash.keys.include?(artist) == false; 
-        hash[artist] = 1
-      else hash[artist]+=1 
-        end
-			end
+    @@genres.each do |genre|
+      if hash[genre]
+				hash[genre] +=1
+			else
+				hash[genre] = 1
+      end
+    end
     hash
   end
+
+	# def self.artist_count 
+  #   hash = {}
+  #   @@artists.each do |artist|
+  #     if hash.keys.include?(artist) == false; 
+  #       hash[artist] = 1
+  #     else hash[artist]+=1 
+  #       end
+	# 		end
+  #   hash
+	# end
+	
+	def self.artist_count 
+		hash = {}
+		@@artists.each do |artist|
+			if hash[artist]
+				hash[artist] +=1
+			else
+				hash[artist] = 1
+			end
+		end
+		hash
+	end
 end
