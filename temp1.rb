@@ -7,12 +7,12 @@ def test(hash, genres)
   else hash[i]+=1 
     end
   end
-   hash
+   puts hash
 end
 
 
 hash = {"soul"=>1, "jamband"=>2}
-genres = ["rap", "rap", "pop", "pop", "pop", "pop", "soul", "country", "classical"]
+genres = ["rap", "rap", "pop", "pop", "pop", "pop", "soul", "country", "classical", "asdf", "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf" , "asdf"]
 
 
 test(hash,genres)
