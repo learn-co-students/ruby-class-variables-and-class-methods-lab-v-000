@@ -20,6 +20,14 @@ def self.count
 @@count
 end
 
+def self.artists
+  @@artists
+end
+
+def self.genres
+  @@genres
+end
+
 def self.genre_count
   @@genres.length
 end
