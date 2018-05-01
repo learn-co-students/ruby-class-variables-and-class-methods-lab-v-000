@@ -1,3 +1,4 @@
+#require "pry"
 class Song
 
   attr_accessor :name, :artist, :genre
@@ -21,15 +22,36 @@ def self.count
 end
 
 def self.artists
-  @@artists
+  @@artists.uniq
 end
 
 def self.genres
-  @@genres
+  @@genres.uniq
 end
 
 def self.genre_count
-  @@genres.length
+  genres = {}
+#binding.pry
+  @@genres.each do |genre|
+    if genres[genre]
+      genres[genre] += 1
+    else
+      genres[genre] = 1
+      end
+    end
+genres
 end
 
+def self.artist_count
+  artists = {}
+#binding.pry
+  @@artists.each do |artist|
+    if artists[artist]
+      artists[artist] += 1
+    else
+      artists[artist] = 1
+      end
+    end
+artists
+end
 end
