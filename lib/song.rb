@@ -37,6 +37,7 @@ class Song
         genre_hash[genre] += 1
       end
     end
+    binding.pry
     genre_hash
   end
 
