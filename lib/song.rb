@@ -21,7 +21,11 @@ class Song
     @@count
   end 
   def self.genres
-     @@genres
+     arry= []
+    @@genres.each do |genre|
+       arry << genre unless arry.include?(genre)
+    end
+    arry
   end
   def self.artists
     arry= []
@@ -31,14 +35,29 @@ class Song
     arry
   end
   def self.genre_count
-    arry= []
-    @@genres.each do |genre|
-       arry << genre unless arry.include?(genre) 
-    end 
-    arry
-  end
+    hash = {}
+    @@genres.each_with_index do |genre|
+     if hash[genre] 
+        hash[genre] += 1 
+     else 
+       hash[genre] = 1 
+     end
+     
+    end
+    hash
+  end 
+  
   def self.artist_count 
-  #enter code here 
+  hash = {}
+    @@artists.each_with_index do |artist|
+     if hash[artist] 
+        hash[artist] += 1 
+     else 
+       hash[artist] = 1 
+     end
+     
+    end 
+    hash
   end 
 end
     
