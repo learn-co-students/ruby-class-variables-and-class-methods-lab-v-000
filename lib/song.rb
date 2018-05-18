@@ -32,7 +32,6 @@ def self.genre_count
   end
 
 def self.artist_count
-    # returns hash of songs and number of songs by each artist
     song_count = {}
     @@artists.each do |artist|
       if song_count.include?(artist)
