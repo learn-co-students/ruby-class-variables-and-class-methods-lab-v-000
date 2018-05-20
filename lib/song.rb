@@ -36,7 +36,7 @@ class Song
   end
   
   def self.artists
-    artists.uniq
+    artists.uniq!{|artist|}
 ``end
   
   def genre=(genre) 
