@@ -36,7 +36,7 @@ class Song
   end
   
   def self.artists
-    artists.uniq!{|artist|}
+    artists.uniq{|artist|}
 ``end
   
   def genre=(genre) 
@@ -63,5 +63,22 @@ class Song
     @artist_count
   end
   
+  attr_accessor :name, :artist, :genre
 
+  
+  def genre_count=(genre_count)
+    genre_count=genre_count
+  end
+  
+  def genre_count
+    @genre_count
+  end
+  
+  def artist_count=(artist_count)
+    @artist_count=artist_count
+  end
+  
+  def artist_count
+    @artist_count
+  end
 end
