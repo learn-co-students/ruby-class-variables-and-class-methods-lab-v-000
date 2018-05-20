@@ -67,7 +67,7 @@ class Song
 
   
   def genre_count=(genre_count)
-    genre_count=genre_count
+    @genre_count=genre_count
   end
   
   def genre_count
