@@ -35,11 +35,22 @@ class Song
   end
 
 
+  # def self.artist_count
+  #   temp_hash = @@artists.group_by {|artist| artist}
+  #   temp_array = temp_hash.map {|key, val| [key, val.count]}
+  #   Hash[temp_array]
+  # end
+  
   def self.artist_count
-    temp_hash = @@artists.group_by {|artist| artist}
-    temp_array = temp_hash.map {|key, val| [key, val.count]}
-    Hash[temp_array]
-
+    artist_count = {}
+    @@artists.each do |element|
+      if artist_count[element]      # if artist already exist in the hash
+        artist_count[element] += 1  # add 1 to the artist's song count  
+      else
+        artist_count[element] = 1  # else, set the first artist's song count to 1
+      end
+    end
+    artist_count
   end
   
 end
