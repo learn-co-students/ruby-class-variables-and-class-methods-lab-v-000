@@ -20,6 +20,15 @@ class Song
     @@artists.uniq {|artist| artist}
   end
   
+  def self.genres
+    @@genres.uniq {|genre| genre}
+  end
+  
+  def self.genre_count
+    genres_hash = Hash.new(0)
+    genres_hash.tap {|hash| @@genres.each {|genre| hash[genre] +=1}}
+  end
+  
 end
   
     
