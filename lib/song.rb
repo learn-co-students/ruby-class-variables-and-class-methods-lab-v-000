@@ -7,28 +7,46 @@ class Song
   
   def initialize(name, artist, genre)
     @name = name
-    @@artists << @artist = artist
-    @@genres << @genre = genre
+    @artist = artist
+    @genre = genre
     @@count +=1
+    @@genres << genre
+    @@artists << artist
   end
-  
+
   def self.count
     @@count
   end
-  
+
   def self.artists
-    @@artists.uniq {|artist| artist}
+    @@artists.uniq
   end
-  
+
+  def self.artist_count
+    artist_count = {}
+    @@artists.each do |artist|
+      if artist_count[artist]
+        artist_count[artist] += 1 
+      else
+        artist_count[artist] = 1
+      end
+    end
+    artist_count
+  end
+
   def self.genres
-    @@genres.uniq {|genre| genre}
+    @@genres.uniq
   end
-  
+
   def self.genre_count
-    genres_hash = Hash.new(0)
-    genres_hash.tap {|hash| @@genres.each {|genre| hash[genre] +=1}}
+    genre_count = {}
+    @@genres.each do |genre|
+      if genre_count[genre]
+        genre_count[genre] += 1 
+      else
+        genre_count[genre] = 1
+      end
+    end
+    genre_count
   end
-  
 end
-  
-    
