@@ -1,9 +1,12 @@
 class Song
+
+  attr_accessor :name, :artist, :genre
+
   
    def initialize(name, artist, genre)
     @name = name
     @artist = artist
-    @@artists << artist
+    #@@artists << artist
     @genre = genre
     @@genres << genre
     @@count += 1
@@ -13,12 +16,23 @@ class Song
   
   @@genres = []
   
+  @@artists = []
+  
   def self.count
-    @@count.uniq
+    @@count
   end
   
   def self.genres
+    #@@genres = []
+    #self.genres.each do | genre |
+    #  @@genres.push(genre) unless @@genres.last == genre
+    #end
+    #@@genres
     @@genres.uniq{|x| x.genre}
+  end
+  
+  def self.artists
+    @@artists.uniq{|x| x.artist}
   end
   
   def self.genre_count
@@ -32,9 +46,8 @@ class Song
     end
   end
   
-  @@artists = []
-  
   def self.artist_count
+    artist_count = {}
     @@artists.each do | artist |
       if artist_count[artist]
         artist_count += 1
@@ -43,13 +56,10 @@ class Song
       end
     end
     
-  def self.artists
-    @@artists.uniq
-  end
+
   
  
  
 end
   
-  attr_accessor :name, :artist, :genre
 end
