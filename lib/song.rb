@@ -28,7 +28,7 @@ class Song
     #  @@genres.push(genre) unless @@genres.last == genre
     #end
     #@@genres
-    @@genres.uniq{|x| x.genre}
+    @@genres.uniq
   end
   
   def self.artists
