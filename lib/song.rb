@@ -32,7 +32,8 @@ class Song
   end
   
   def self.genre_count
-   @@genres.collect do |genre|
+  
+  @@genres.collect do |genre|
       @@genre_count[genre] = true if (!@@genre_count[genre])
     end
 
