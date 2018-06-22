@@ -6,7 +6,7 @@ class Song
   @@count = 0 
   @@genres = []
   @@artists = []
-  @@genre_count = {} 
+  #@@genre_count = {} 
 
  
   def initialize(name, artist, genre)
@@ -32,12 +32,17 @@ class Song
   end
   
   def self.genre_count
-  
-  @@genres.collect do |genre|
-      @@genre_count[genre] = true if (!@@genre_count[genre])
-    end
-
-  @@genre_count
+    @@genres.each_with_object(Hash.new(0)) { |o, h| h[o] += 1 }
+  # @@genres.collect do |genre|
+  #     @@genre_count[genre] = true if (!@@genre_count[genre])
+  #   end
+   #@@genre_count
+   #binding.pry
   end
+  
+  def self.artist_count
+    @@artists.each_with_object(Hash.new(0)) { |o, h| h[o] += 1 }
+  end
+    
   
 end
