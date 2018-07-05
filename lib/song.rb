@@ -3,27 +3,55 @@ require 'pry'
 class Song
   attr_accessor :name, :artist, :genre
 
-    @@song_genre = []
-    @@song_count = 30
-    @@song_artist = []
+    @@genres = []
+    @@count = 0
+    @@artists = []
 
-  def initialize(song_name, artist, genre)
-    @song_name = song_name
+
+  def initialize(name, artist, genre)
+    @name = name
     @artist = artist
+    @@artists << artist
     @genre = genre
-    @@song_count += 1
+    @@genres << genre
+    @@count += 1
   end
 
 def self.count
-  @@song_count
+  @@count
 end
 
-def self.genre
-  @@song_genre << genre unless @@song_genre.include?(genre)
+def self.genres
+  @@genres.uniq
 end
 
-def self.artist
-  @@song_artist
+def self.artists
+  @@artists.uniq
+end
+
+def self.artist_count
+  artists_count = {}
+  @@artists.each do |artist|
+    if artists_count[artist]
+      artists_count[artist] += 1
+    else
+      artists_count[artist] = 1
+    end
+  end
+  return artists_count
+end
+
+
+def self.genre_count
+  genres_count = {}
+  @@genres.each do |genre|
+    if genres_count[genre]
+      genres_count[genre] += 1
+    else
+      genres_count[genre] = 1
+end
+end
+return genres_count
 end
 
 end
