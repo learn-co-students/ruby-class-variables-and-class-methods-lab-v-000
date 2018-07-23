@@ -1,3 +1,5 @@
+require "pry"
+
 class Song
   @@count = 0
   @@artists = []
@@ -28,20 +30,19 @@ class Song
   end
 
   def self.genre_count
+    genre_numbers = { }
     @@genres.each do |genre|
-      @@genre_count[genre] = @@genres.count(genre)
+      genre_numbers[genre] = @@genres.count(genre)
     end
-   @@genre_count
+   genre_numbers
   end
 
   def self.artist_count
+    artist_numbers = { }
     @@artists.each do |artist|
-      @@artist_count[artist] = @@artists.count(artist)
+      artist_numbers[artist] = @@artists.count(artist)
     end
-    @@artist_count
+    artist_numbers
   end
-
-
-
 
 end
