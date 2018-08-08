@@ -2,6 +2,7 @@ class Song
   
   @@count = 0 
   @@genres = [] 
+  @@artists = []
  
 
 attr_accessor :name, :artist, :genre
@@ -12,6 +13,7 @@ attr_accessor :name, :artist, :genre
     @artist = artist 
     @genre = genre 
     @@genres << @genre
+    @@artists << @artist
   end
  
   def self.count
@@ -22,11 +24,14 @@ attr_accessor :name, :artist, :genre
     @@genres.uniq
   end
   
-  def self.genre_count
-    new_hash = {}
-    @@genres.each do |genre|
-      if @@genres.include?(genre)
-        new_hash +=
+   def self.artists
+    @@artists.uniq
   end
+  
+  # def self.genre_count
+  #   new_hash = {}
+  #   @@genres.each do |genre|
+  #     if @@genres.include?(genre)
+  #       new_hash +=
+  # end
   end
-end
