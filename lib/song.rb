@@ -28,10 +28,14 @@ attr_accessor :name, :artist, :genre
     @@artists.uniq
   end
   
-  # def self.genre_count
-  #   new_hash = {}
-  #   @@genres.each do |genre|
-  #     if @@genres.include?(genre)
-  #       new_hash +=
-  # end
+  def self.genre_count
+     genre_plus1 = {}
+      @@genres.each do |genre, v|
+      if @@genres.include?(genre)
+        genre_plus1[genre] += 1 
+      else
+        genre_plus1[genre] = v
+      end
+  end
+end
   end
