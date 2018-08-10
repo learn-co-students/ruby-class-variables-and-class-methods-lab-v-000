@@ -34,7 +34,7 @@ attr_accessor :name, :artist, :genre
       if @@genres.include?(genre)
         genre_counts[genre] += 1 
       else
-        genre_counts[genre] = v
+        genre_counts[genre] = 1
       end
   end
 end
