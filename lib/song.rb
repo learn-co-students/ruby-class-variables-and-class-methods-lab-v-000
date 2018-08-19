@@ -4,7 +4,6 @@ class Song
   @@count = 0
   @@genres = []
   @@artists = []
-  @@genre_count = {}
   @@song_names = []
 
   def initialize(name, artist, genre)
@@ -30,10 +29,19 @@ class Song
   end
 
   def self.genre_count
-    {"pop" => 1, "rap" => 2}
+    genre_count = {}
+    unique_genres = @@genres.uniq
+    unique_genres.each do |ugen|
+      genre_count[ugen] = @@genres.count {|gen| gen == ugen}
+    end
+    genre_count
   end
 
   def self.artist_count
-    {"Brittany Spears" => 1, "Jay-Z" => 2}
-  end
+    artist_count = {}
+    unique_artists = @@artists.uniq
+    unique_artists.each do |uart|
+      artist_count[uart] = @@artist.count {|art| art == uart}
+    end
+    artist_count
 end
