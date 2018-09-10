@@ -3,8 +3,8 @@ class Song
   attr_accessor :name, :artist, :genre
   
   @@count = 0
-  @@artists = []
   @@genres = []
+  @@artists = []
   # @@genre_count = Hash.new
   # @@artist_count = Hash.new
   
@@ -13,8 +13,8 @@ class Song
     @artist= artist
     @genre= genre
     @@count += 1
-    @@artists << @artist
     @@genres << @genre
+    @@artists << @artist
     # @@genres_count
   end
   
@@ -22,12 +22,12 @@ class Song
     @@count
   end
   
-  def self.artists
-    @@artists
+  def self.genres
+    @@genres.unique
   end
   
-  def self.genres
-    @@genres
+  def self.artists
+    @@artists
   end
   
 end
