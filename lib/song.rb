@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
   
   attr_accessor :name, :artist, :genre
@@ -5,7 +7,7 @@ class Song
   @@count = 0
   @@genres = []
   @@artists = []
-  @@genre_count = Hash.new
+  @@genre_count = {}
   # @@artist_count = Hash.new
   
   def initialize (name, artist, genre)
@@ -30,7 +32,16 @@ class Song
   end
   
   def self.genre_count
-   @@genres.each {|g| @@genre_count[g] += 1}
+   genre_hash = {}
+   @@genres.each do |g|
+     if !genre_hash.include?(g)
+  #binding.pry
+       genre_hash[g] = 1
+    else
+      genre_hash[g] += 1
+      end
+    end
+    genre_hash
   end
   
   def self.artist_count
