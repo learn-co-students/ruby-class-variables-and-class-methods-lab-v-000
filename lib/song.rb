@@ -7,8 +7,6 @@ class Song
   @@count = 0
   @@genres = []
   @@artists = []
-  @@genre_count = {}
-  # @@artist_count = Hash.new
   
   def initialize (name, artist, genre)
     @name= name
@@ -35,7 +33,6 @@ class Song
    genre_hash = {}
    @@genres.each do |g|
      if !genre_hash.include?(g)
-  #binding.pry
        genre_hash[g] = 1
     else
       genre_hash[g] += 1
@@ -45,7 +42,15 @@ class Song
   end
   
   def self.artist_count
-    
+    artist_hash = {}
+   @@genres.each do |g|
+     if !artist_hash.include?(g)
+       artist_hash[g] = 1
+    else
+      artist_hash[g] += 1
+      end
+    end
+    artist_hash
   end
   
 end
