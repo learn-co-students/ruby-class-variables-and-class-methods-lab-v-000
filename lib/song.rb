@@ -26,11 +26,16 @@ class Song
     @@artists  = @@artists.uniq
   end 
   
-  def genre_count 
-    @@genre[*data.group_by{ |v| v }.flat_map{ |k, v| [k, v.size] }]
+  def self.genre_count
+    hash = Hash.new(0)
+    @@genres.each{|key| hash[key] += 1}
+    hash
   end 
   
-  def artist_count
+  def self.artist_count
+     hash = Hash.new(0)
+    @@artists.each{|key| hash[key] += 1}
+    hash
   end 
   
 
