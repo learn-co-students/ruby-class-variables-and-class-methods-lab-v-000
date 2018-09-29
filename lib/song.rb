@@ -10,25 +10,28 @@ class Song
     @artist = artist 
     @genre = genre 
     @@count += 1
-    @@genres<< genre 
-    @@artists<< artist 
+    @@genres<< @genre 
+    @@artists<< @artist 
   end 
 
   def self.count
     @@count 
   end 
   
-  def genres 
-    
+  def self.genres 
+    @@genres = @@genres.uniq
   end 
   
-  def artists 
+  def self.artists 
+    @@artists  = @@artists.uniq
   end 
   
   def genre_count 
+    @@genre[*data.group_by{ |v| v }.flat_map{ |k, v| [k, v.size] }]
   end 
   
   def artist_count
   end 
   
+
 end 
