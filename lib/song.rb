@@ -1,5 +1,3 @@
-require 'pry'
-
 class Song
   attr_accessor :name, :artist, :genre
   
@@ -52,23 +50,3 @@ class Song
     artist_count
   end 
 end 
-
-
-  # def self.genre_count
-  #   genre_count = Hash.new 
-  #   @@genres.each do |genre, x|
-  #     if @@genres.include?(@genre) { |x| x + 1}
-  #     else 
-  #       genre_count[genre] = count 
-  #     end
-  #   end 
-  #   genre_count
-  # end
-  
-  # def sort
-  #   sorted = {}
-  #   roster.each do |grade, students|
-  #     sorted[grade] = students.sort
-  #   end
-  #   sorted
-  # end
