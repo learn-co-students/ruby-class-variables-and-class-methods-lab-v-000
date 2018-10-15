@@ -1,21 +1,18 @@
-require "pry"
-
 class Song
 
   attr_accessor :name, :artist, :genre
 
   @@count = 0
-  @@artists = []
   @@genres = []
-
+  @@artists = []
 
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
     @genre = genre
     @@count += 1
-    @@artists << @artist
-    @@genres << @genre
+    @@genres << genre
+    @@artists << artist
   end
 
   def self.count
@@ -30,34 +27,37 @@ class Song
     @@artists.uniq
   end
 
-  def self.genre_count
-    genre_hash = {}
-    @@genres.each do |genre|
-      if genre_hash.include?(genre)
-        genre_hash[genre] += 1
-      else
-        genre_hash[genre] = 1
+#returns hash in which the keys are the names of each genre and value is the number of songs in each genre
+#need to iterate over @@genres and populate a hash with key/value pairs
+  #need to check if hash already contains a key of a particular genre
+      #if so increment the value of that key by one
+      #otherwise create a new key/value pair
+
+    def self.genre_count
+      genre_hash = {}
+      @@genres.each do |genre|
+        if genre_hash[genre]
+          genre_hash[genre] += 1
+        else
+          genre_hash[genre] = 1
+        end
       end
+      genre_hash
     end
-    genre_hash
+
+    def self.artist_count
+      artist_hash = {}
+      @@artists.each do |artist|
+        if artist_hash[artist]
+          artist_hash[artist] += 1
+        else
+          artist_hash[artist] = 1
+        end
+      end
+      artist_hash
   end
 
-  def self.artist_count
-    artist_hash = {}
-    @@artists.each do |artist|
-      if artist_hash.include?(artist)
-        artist_hash[artist] += 1
-      else
-        artist_hash[artist] = 1
-      end
-    end
-    artist_hash
-  end
 
 
 
-
-
-
-
-end #end Class Song
+end
