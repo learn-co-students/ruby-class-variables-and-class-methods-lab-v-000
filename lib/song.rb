@@ -17,29 +17,62 @@
 class Song
   attr_accessor  :name, :artist, :genre
   @@count = 0
-  @@genres = []
   @@artists = []
+  @@genres = []
   @@artists_count = {}
   @@genre_count = {}
 
-def initialize(name, artist, genre)
-  @name = name
-  @artist = artist
-  @genre = genre
-  @@count += 1
-  @@genres << genre
-  @@artists << artist
+  def initialize(name, artist, genre)
+    @name = name
+    @artist = artist
+    @genre = genre
+    @@count += 1
+    @@artists << artist
+    @@genres << genre
   end
 
-# Class method: total number of songs
-def self.count
-  @@count
+# Count: Class method total number of songs in class
+  def self.count
+    @@count
+  end
+
+# Artists:  Class method returns array listing all artists
+  def self.artists
+    @@artists.uniq
+  end
+
+# Genres: Class method returns array list of all genres
+  def self.genres
+    @@genres.uniq
+  end
+
+# Example data:
+# Song.new("Lucifer", "Jay-Z", "rap" )
+# Song.new("99 Problems", "Jay-Z", "rap")
+# Song.new("hit me baby one more time", "Brittany Spears", "pop")
+
+# artists count: Class method returns hash
+# => artist names as keys; count of all songs by artist as values
+# iterate with #each over artists array,
+#   contains each artist's name once for EACH song by that artist,
+#   VALUES - make counter var to count names in iteration
+#   HOW ?? KEYS  collect each unique artist name in iteration
+def artists_count
+  name_count = 0
+  @@artists.each do |artist|
+
+    name_count +=
 end
 
-def self.genre_count
-  @@genres.uniq.length
-end
+# => genre names as keys; count of all songs in genre as values
+# iterate with #each over genres array,
+#   contains each genre once for EACH song in that genre
+#   VALUES - make counter var to count genre type in iteration
+#   HOW ?? KEYS  collect each unique genre type  in iteration
+def genre_count
 
+
+end
 
 # end class below
 end
