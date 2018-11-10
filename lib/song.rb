@@ -1,28 +1,35 @@
 # Song class
 # can produce individual songs
-# class keeps count of songs created (total and/or in genre_count only?)
+
 # Instance methods w/ attr_accessor
-#   name,
+#   name (song title)
 #   artist
-#   genre.
+#   genre
 
-#  are the below class or instance methods?
-#   ? genre_count  -- track num songs of EACH genre
-#   ? artist_count -- track num songs of EACH artist
+# Class vars & methods
+#   @@count -- total num songs then use to create subcounts by artist & genre
+#     #initialize -- increment by 1
+#   @@genres -- array UNIQUE list of all genres, add in initialize (no dupes)
+#   @@artists -- array UNIQUE list of all artists (no dupes)
+#   @@artists_count  hash artist => num songs by artist
+#   @@genre_count hash  genre => num songs in genre
 
-# Class methods
-#   song count -- total songs then use to create subcounts by artist & genre
-#
+class Song
+  attr_accessor  :name, :artist, :genre
 
-
-class songs
-attr_accessor  name:, artist:, genre:
+  @@count = 0
+  @@genres = []
+  @@artists = []
 
 def initialize(name, artist, genre)
   @name = name
   @artist = artist
   @genre = genre
-
+  @@count += 1
+  @@genres << genre
+  @@artists << artist
+  @@artists_count
+  @@genre_count
 end
 
 
