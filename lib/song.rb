@@ -1,3 +1,4 @@
+require 'pry'
 # Song class
 # can produce individual songs
 
@@ -11,7 +12,7 @@
 #     #initialize -- increment by 1
 #   @@genres -- array UNIQUE list of all genres, add in initialize (no dupes)
 #   @@artists -- array UNIQUE list of all artists (no dupes)
-#   @@artists_count  hash artist => num songs by artist
+#   @@artist_count  hash artist => num songs by artist
 #   @@genre_count hash  genre => num songs in genre
 
 class Song
@@ -19,7 +20,7 @@ class Song
   @@count = 0
   @@artists = []
   @@genres = []
-  @@artists_count = {}
+  @@artist_count = {}
   @@genre_count = {}
 
   def initialize(name, artist, genre)
@@ -31,7 +32,7 @@ class Song
     @@genres << genre
   end
 
-# Count: Class method total number of songs in class
+# Count: Class method READER total number of songs in class
   def self.count
     @@count
   end
@@ -57,22 +58,38 @@ class Song
 #   contains each artist's name once for EACH song by that artist,
 #   VALUES - make counter var to count names in iteration
 #   HOW ?? KEYS  collect each unique artist name in iteration
-def artists_count
-  name_count = 0
-  @@artists.each do |artist|
-
-    name_count +=
+def self.artist_count
+	a_count = {}
+	@@artists.each do |artist|
+		if a_count[artist]
+	   a_count[artist] +=1
+		else
+			a_count[artist] = 1
+  	end
+	end
+	@@artist_count = a_count
+  @@artist_count
 end
+
 
 # => genre names as keys; count of all songs in genre as values
 # iterate with #each over genres array,
 #   contains each genre once for EACH song in that genre
 #   VALUES - make counter var to count genre type in iteration
-#   HOW ?? KEYS  collect each unique genre type  in iteration
-def genre_count
+#   KEYS  collect each unique genre type  in iteration
+def self.genre_count
+	g_count = {}
+  	@@genres.each do |g|
+  binding.pry
+      if g_count[g]
+         g_count[g] += 1
+      else
+         g_count[g] = 1
+      end
+    end
+    @@genre_count = g_count
+    @@genre_count
+  end
 
-
-end
-
-# end class below
+# class end below
 end
