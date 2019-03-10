@@ -36,9 +36,9 @@ def self.genre_count
   genre_count = {}
   @@genres.each do |genre|
       if genre_count[genre] #if genre is already present in the hash
-          genre_count[genre] +=1
+          genre_count[genre] +=1 #skip over and go to the next artist to evaluate
       else
-        genre_count[genre] = 1
+        genre_count[genre] = 1 #if genre doesn't exist, add genre to the hash to be returned
       end
     end
     genre_count
