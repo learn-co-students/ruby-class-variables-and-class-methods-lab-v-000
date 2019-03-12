@@ -1,51 +1,52 @@
-class Song 
-  attr_accessor :name, :artist, :genre
+
+#class Song 
+  #attr_accessor :name, :artist, :genre
   
-  @@count = 0       #class variable
-  @@artists = []    #class variable 
-  @@genres = []     #class variable 
-  def initialize(name, artist, genre )
-     @name = name    #instance variable
+  #@@count = 0       #class variable
+  #@@artists = []    #class variable 
+  #@@genres = []     #class variable 
+  #def initialize(name, artist, genre )
+     #@name = name    #instance variable
      
-     @artist = artist
-     @@artists << artist  
+     #@artist = artist
+     #@@artists << artist  
      
-     @genre = genre
-     @@genres << genre 
+     #@genre = genre
+     #@@genres << genre 
      
-     @@count += 1 #class variable keeping count and adds 1 to count
-  end 
+     #@@count += 1 #class variable keeping count and adds 1 to count
+  #end
   
-  def self.count
-    @@count
-  end 
+  #def self.count
+    ###@@count
+  #end 
   
-  def self.genres
-  @@genres.uniq 
-  end 
+  #def self.genres
+  #@@genres.uniq 
+  #end 
   
-  def self.artists 
-  @@artists.uniq
+  #def self.artists 
+  #@@artists.uniq
   
-  end 
-  
-  def self.genre_count
-    genre_count = {}
-    @@genres.each do |genre|
-      if genre_count [genre]
-        genre_count[genre] +=1 
-      else 
-        genre_count[genre] = 1 
-      end 
-    end 
-    genre_count
-  end 
+  #end 
+  #def self.genre_count
+  #genre_count = {}
+  #@@genres.each do |genre|
+    #if genre_count [genre]
+      #genre_count[genre] +=1 
+    #else 
+      #enre_count[genre] = 1 
+    #end 
+    #end 
+    #genre_count
+  #end 
    
-  def self.artist_count
-    @@artists.inject(Hash.new(0)) { |total, i| total[i] += 1 ;total}
-  end
+  #def self.artist_count
+    #@@artists.inject(Hash.new(0)) { |total, i| total[i] += 1 ;total}
+  #end
   
-end 
+#end 
+
 
 
 
