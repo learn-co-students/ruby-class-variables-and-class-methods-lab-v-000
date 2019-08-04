@@ -1,6 +1,5 @@
 class Song
   attr_accessor :name, :artist, :genre
-  #attr_reader
   
   @@count = 0
   @@genres = [ ]
@@ -12,53 +11,56 @@ class Song
     @genre = genre
     
     @@genres << genre
-    @@artist << artist 
-    @@name << name 
+    @@artists << artist 
     
     @@count += 1
-end
-
-def genres
-  x = [ ]
-  @@genres.map do |thing|
-    if thing == @genre
-      x << thing
-    end
-    if x.length > 0 
-      @@genres.delete(x[0])
-    end
-  end
-
-    #if @@genres.include?(genre).count > 1 
-    #@@genres.delete(genre)
   end
   
-  def artists 
-     x = [ ]
-  @@artists.map do |thing|
-    if thing == @artist
-      x << thing
-    end
-    if x.length > 0 
-      @@artists.delete(x[0])
-    end
+  def self.count
+    @@count
   end
   
-  def genre_count
-    hash_brown = { }
-    @@genres.each do |thing|
-      hash_brown << hash_brown[thing] = [ ]
+  def self.genres
+    x = [ ]
+    @@genres.map do |genre|
+      if x.include?(genre) == false
+        x << genre
+      end
     end
-    hash_brown
+    x 
   end
+  
+  def self.artists 
+    x = [ ]
+    @@artists.map do |artist|
+      if x.include?(artist) == false 
+        x << artist
+      end
+    end
+    x
+  end
+  
+  def self.genre_count
+    genre_hash = { }
     
-    def artist_count
-      hash_brown = { }
-      @@artists.each do |thing|
-      hash_brown << hash_brown[thing] = [ ]
-      if song.genre = thing
-        hash_brown[thing] += 1
-    hash_brown
+    self.genres.each do |x|
+      genre_hash[x] = 0
+    end
+    @@genres.each do |genre|
+      genre_hash[genre] += 1 
+    end
+    genre_hash
   end
-end
+  
+   def self.artist_count
+    artist_hash = { }
+    
+    self.artists.each do |x|
+      artist_hash[x] = 0
+    end
+    @@artists.each do |artist|
+      artist_hash[artist] += 1 
+    end
+    artist_hash
+  end
 end
