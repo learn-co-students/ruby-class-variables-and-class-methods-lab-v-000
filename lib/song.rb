@@ -56,7 +56,8 @@ def genres
       hash_brown = { }
       @@artists.each do |thing|
       hash_brown << hash_brown[thing] = [ ]
-    end
+      if song.genre = thing
+        hash_brown[thing] += 1
     hash_brown
   end
 end
