@@ -29,14 +29,35 @@ def genres
     end
   end
 
-      
-  if @@genres.include?(genre).count > 1 
-    @@genres.delete(genre)
+    #if @@genres.include?(genre).count > 1 
+    #@@genres.delete(genre)
   end
   
-  def arists 
-    if @@artists.include?(genre).count > 1 
-    @@genres.delete(genre)
+  def artists 
+     x = [ ]
+  @@artists.map do |thing|
+    if thing == @artist
+      x << thing
+    end
+    if x.length > 0 
+      @@artists.delete(x[0])
+    end
+  end
+  
+  def genre_count
+    hash_brown = { }
+    @@genres.each do |thing|
+      hash_brown << hash_brown[thing] = [ ]
+    end
+    hash_brown
+  end
     
-    
+    def artist_count
+      hash_brown = { }
+      @@artists.each do |thing|
+      hash_brown << hash_brown[thing] = [ ]
+    end
+    hash_brown
+  end
+end
 end
