@@ -3,6 +3,10 @@ require 'pry'
 class Song
   attr_accessor :name, :artist, :genre
 
+  @@count = 0
+  @@genres = []
+  @@artists = []
+
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
@@ -11,10 +15,6 @@ class Song
     @@genres << genre
     @@artists << artist
   end
-
-  @@count = 0
-  @@genres = []
-  @@artists = []
 
   def self.count
     @@count
@@ -42,14 +42,13 @@ class Song
 
   def self.artist_count
     artist_count = {}
-    @@artists.each do |a|
-      if artist_count[a]
-        artist_count[a] += 1
+    @@artists.each do |artist|
+      if artist_count[artist]
+        artist_count[artist] += 1
       else
-        artist_count[a] = 1
+        artist_count[artist] = 1
       end
     end
     artist_count
   end
-  
 end
