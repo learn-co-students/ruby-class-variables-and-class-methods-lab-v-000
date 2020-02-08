@@ -1,7 +1,7 @@
 # song.rb
 
 class Song
-  #attr_accessor = :name, :artist, :genre
+  attr_accessor :name, :artist, :genre
   @@count = 0
   @@artists = []
   @@genres = []
@@ -16,18 +16,6 @@ class Song
     @@artists << @artist
     # class variable, @@genres, that contains all of the genres of existing songs
     @@genres << @genre
-  end
-
-  def name
-    @name
-  end
-
-  def artist
-    @artist
-  end
-
-  def genre
-    @genre
   end
 
   def self.count # class method returns the number of songs created
