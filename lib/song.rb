@@ -1,5 +1,5 @@
 class Song
-  attr_accessor :name, :artist, :genre
+  attr_reader :name, :artist, :genre
 
   @@count = 0
   @@artists = []
@@ -10,8 +10,8 @@ class Song
     @artist = artist
     @genre = genre
     @@count += 1
-    @@artists << artist
     @@genres << genre
+    @@artists << artist
   end
 
   def self.count
@@ -19,19 +19,11 @@ class Song
   end
 
   def self.genres
-    genres_no_duplicates = []
-    @@genres.each do |genre|
-      genres_no_duplicates << genre unless genres_no_duplicates.include?(genre)
-    end
-    genres_no_duplicates
+    @@genres.uniq
   end
 
   def self.artists
-    artists_no_duplicates = []
-    @@artists.each do |artist|
-      artists_no_duplicates << artist unless artists_no_duplicates.include?(artist)
-    end
-    artists_no_duplicates
+    @@artists.uniq
   end
 
   def self.genre_count
@@ -57,4 +49,5 @@ class Song
     end
     artist_count
   end
+
 end
