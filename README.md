@@ -1,4 +1,4 @@
-# Ruby Class Variables And Class Methods Lab
+learn# Ruby Class Variables And Class Methods Lab
 
 ## Objectives
 
